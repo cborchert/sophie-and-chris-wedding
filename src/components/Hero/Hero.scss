@@ -1,0 +1,19 @@
+.Hero {
+  text-align: center;
+
+  h1 {
+    font-size: 5rem;
+    line-height: 1.125;
+    letter-spacing: 2px;
+  }
+  hr {
+    width: 48px;
+    margin: 40px auto;
+    border: 0;
+    border-top: 1px solid #ccc;
+  }
+  span {
+    font-size: 0.5em;
+    display: block;
+  }
+}
