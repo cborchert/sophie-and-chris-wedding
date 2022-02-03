@@ -1,8 +1,17 @@
 :root {
-  --bg: #000;
-  --fg: #fff;
-  --font-text: "Elsie", "Georgia", serif;
-  --font-heading: "Satisfy", "Arial", sans-serif;
+  --fg: #eee;
+  --bg: #222228;
+  --font-text: "Georgia", serif;
+  --font-heading: "Arial", sans-serif;
+  --font-title: "Arial", sans-serif;
+  --font-heading: "Great Vibes";
+  /* --font-heading: "Allura"; */
+  /* --font-heading: "Satisfy"; */
+  /* --font-heading: "Yellowtail"; */
+  /* --font-heading: "Style Script"; */
+  /* --font-heading: "Lobster"; */
+  /* --font-heading: "Dancing Script"; */
+  /* --font-heading: "Elsie"; */
 }
 
 body {

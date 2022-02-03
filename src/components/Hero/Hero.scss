@@ -1,19 +1,62 @@
+$flowerBaseWidth: 280px;
+
 .Hero {
   text-align: center;
+  position: relative;
+  padding: 80px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
 
   h1 {
     font-size: 5rem;
     line-height: 1.125;
-    letter-spacing: 2px;
   }
+
   hr {
     width: 48px;
     margin: 40px auto;
     border: 0;
     border-top: 1px solid #ccc;
   }
+
   span {
-    font-size: 0.5em;
-    display: block;
+    font-size: 0.3em;
+    display: inline-block;
+    line-height: 2;
+    vertical-align: middle;
+    margin: 0 16px;
+  }
+}
+
+.Hero__imageContainer {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  pointer-events: none;
+  opacity: 0.7;
+
+  &--glow {
+    filter: blur(12px) brightness(1.2);
+    opacity: 0.2;
+  }
+
+  .Hero__image {
+    opacity: 0.8;
+    &--upperRight {
+      position: absolute;
+      top: 0;
+      right: 0;
+      width: $flowerBaseWidth;
+    }
+    &--lowerLeft {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 2.4 * $flowerBaseWidth;
+    }
   }
 }

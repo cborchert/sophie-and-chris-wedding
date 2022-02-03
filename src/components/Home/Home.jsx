@@ -9,10 +9,10 @@ import "./Home.scss";
 const Home = ({ i18n }) => (
   <main className="Home">
     <Hero i18n={i18n.hero} />
-    <Intro i18n={i18n.intro} />
+    {/* <Intro i18n={i18n.intro} />
     <Location i18={i18n.location} />
     <Program i18n={i18n.program} />
-    <Lodging i18n={i18n.lodging} />
+    <Lodging i18n={i18n.lodging} /> */}
   </main>
 );
 export default Home;
