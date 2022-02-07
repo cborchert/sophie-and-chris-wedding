@@ -24,6 +24,12 @@ type PropTypes = {
   wording: i18nRsvpWording;
 };
 
+const encode = (data) => {
+  return Object.keys(data)
+    .map((key) => encodeURIComponent(key) + "=" + encodeURIComponent(data[key]))
+    .join("&");
+};
+
 const RsvpForm = ({
   state,
   handleCancel,
@@ -94,9 +100,15 @@ const RsvpForm = ({
           initialValues={defaultValues}
           validationSchema={responseSchema}
           onSubmit={(values, { setSubmitting }) => {
-            console.log(values);
             handleSuccess();
             setSubmitting(false);
+            fetch("/", {
+              method: "POST",
+              headers: { "Content-Type": "application/x-www-form-urlencoded" },
+              body: encode({ "form-name": "contact", ...values }),
+            })
+              .then((a) => console.log({ a }))
+              .catch((e) => alert({ e }));
           }}
         >
           {(formik) => (
