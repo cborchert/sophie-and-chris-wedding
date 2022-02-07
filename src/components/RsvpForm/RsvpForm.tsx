@@ -94,14 +94,19 @@ const RsvpForm = ({
           initialValues={defaultValues}
           validationSchema={responseSchema}
           onSubmit={(values, { setSubmitting }) => {
-            setTimeout(() => {
-              handleSuccess();
-              setSubmitting(false);
-            }, 400);
+            console.log(values);
+            handleSuccess();
+            setSubmitting(false);
           }}
         >
           {(formik) => (
-            <Form>
+            <Form
+              name="rsvp"
+              method="post"
+              data-netlify="true"
+              data-netlify-honeypot="bot-field"
+            >
+              <input type="hidden" name="form-name" value="rsvp" />
               <FormLine id="name">
                 <label>
                   {wording.yourNameLabel}
