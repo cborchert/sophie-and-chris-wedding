@@ -105,7 +105,7 @@ const RsvpForm = ({
             fetch("/", {
               method: "POST",
               headers: { "Content-Type": "application/x-www-form-urlencoded" },
-              body: encode({ "form-name": "contact", ...values }),
+              body: encode({ "form-name": "rsvp", ...values }),
             })
               .then((a) => console.log({ a }))
               .catch((e) => alert({ e }));
