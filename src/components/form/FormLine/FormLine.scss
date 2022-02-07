@@ -4,4 +4,8 @@
   & > & {
     margin-top: 0;
   }
+
+  &.is-hidden {
+    display: none;
+  }
 }

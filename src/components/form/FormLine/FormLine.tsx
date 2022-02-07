@@ -1,3 +1,4 @@
+import classNames from "classnames";
 import "./FormLine.scss";
 
 const FormLine = ({
@@ -9,7 +10,7 @@ const FormLine = ({
   children?: Node;
   hidden?: boolean;
 }) => (
-  <div id={id} className="FormLine" hidden={hidden}>
+  <div id={id} className={classNames("FormLine", { "is-hidden": hidden })}>
     {children}
   </div>
 );
