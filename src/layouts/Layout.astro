@@ -1,14 +1,15 @@
 ---
+import "../styles/global.scss";
 const {title} = Astro.props;
 ---
+
 <html>
   <head>
     <title>{title}</title>
-    <link rel="stylesheet" type="text/css" href={Astro.resolve('../styles/reset.css')} />
-    <link rel="stylesheet" type="text/css" href={Astro.resolve('../styles/global.css')} />
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Allura&family=Cookie&family=Courgette&family=Dancing+Script&family=Elsie:wght@400;900&family=Great+Vibes&family=Lobster&family=Meow+Script&family=Niconne&family=Satisfy&family=Style+Script&family=Yellowtail&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Alice&family=Allura&family=Cookie&family=Courgette&family=Dancing+Script&family=Elsie:wght@400;900&family=Great+Vibes&family=Lobster&family=Meow+Script&family=Niconne&family=Noto+Serif&family=Satisfy&family=Style+Script&family=Yellowtail&display=swap" rel="stylesheet">
+   
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
   </head>
   <body>

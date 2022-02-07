@@ -1,0 +1,22 @@
+:root {
+  --fg: #eee;
+  --bg: #222228;
+  --bg-2: var(--fg);
+  --fg-2: var(--bg);
+  --error: #f00;
+  --font-text: "Georgia", serif;
+  --font-heading: "Great Vibes", "Georgia", serif, serif;
+  --font-text: "Noto Serif", "Georgia", serif;
+  --border-radius: 3px;
+  --border-color: #aaa;
+
+  --sp: 4px;
+  --sp-1: var(--sp);
+  --sp-2: calc(var(--sp) * 2);
+  --sp-3: calc(var(--sp) * 4);
+  --sp-4: calc(var(--sp) * 8);
+  --sp-5: calc(var(--sp) * 16);
+  --sp-6: calc(var(--sp) * 32);
+  --sp-7: calc(var(--sp) * 64);
+  --sp-8: calc(var(--sp) * 128);
+}

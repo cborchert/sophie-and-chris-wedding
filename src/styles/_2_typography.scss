@@ -1,0 +1,15 @@
+body {
+  background-color: var(--bg);
+  color: var(--fg);
+  font-family: var(--font-text);
+}
+
+h1,
+h2,
+h3,
+h4,
+h5 {
+  font-family: var(--font-heading);
+  font-weight: bold;
+  font-style: italic;
+}

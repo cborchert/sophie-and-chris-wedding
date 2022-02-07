@@ -1,0 +1,75 @@
+input[type="text"],
+input[type="email"],
+input[type="tel"],
+input[type="number"],
+textarea {
+  display: block;
+  border-radius: var(--border-radius);
+  border: 1px solid var(--border-color);
+  margin-top: var(--sp-1);
+  margin-right: var(--sp-2);
+  width: 100%;
+  padding: var(--sp-1) var(--sp-2);
+}
+
+textarea {
+  min-height: 120px;
+}
+
+input[type="checkbox"],
+input[type="radio"] {
+  border-radius: var(--border-radius);
+  border: 1px solid var(--border-color);
+  margin-right: var(--sp-2);
+  vertical-align: middle;
+}
+
+input[type="checkbox"] {
+  margin-left: var(--sp-2);
+}
+
+label {
+  display: block;
+}
+
+button,
+.button {
+  display: inline-block;
+  border-radius: var(--border-radius);
+  border: 1px solid var(--fg);
+  color: var(--fg);
+  margin: var(--sp-2);
+  padding: var(--sp-1) var(--sp-4);
+  background-color: transparent;
+  cursor: pointer;
+  transition: 300ms;
+
+  &:hover {
+    background: var(--fg);
+    color: var(--bg);
+  }
+
+  &.button--alt {
+    border: 1px solid var(--bg);
+    color: var(--bg);
+    &:hover {
+      background: var(--bg);
+      color: var(--fg);
+    }
+  }
+
+  &.button--block {
+    display: block;
+    width: 100%;
+  }
+
+  &.button--spaced {
+    margin-top: var(--sp-5);
+    margin-bottom: var(--sp-5);
+  }
+
+  &.button--large {
+    padding: var(--sp-2) var(--sp-4);
+    font-size: 1.2rem;
+  }
+}
