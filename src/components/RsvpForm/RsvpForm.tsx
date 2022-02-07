@@ -116,10 +116,12 @@ const RsvpForm = ({
               name="rsvp"
               method="post"
               data-netlify="true"
-              data-netlify-honeypot="bot-field"
-              data-netlify-recaptcha="true"
+              data-netlify-honeypot="email"
             >
               <input type="hidden" name="form-name" value="rsvp" />
+              <FormLine hidden>
+                <input type="email" name="email" />
+              </FormLine>
               <FormLine id="name">
                 <label>
                   {wording.yourNameLabel}
@@ -181,7 +183,6 @@ const RsvpForm = ({
                   <Field type="text" as="textarea" name="otherNotes" />
                 </label>
               </FormLine>
-              <div data-netlify-recaptcha="true"></div>
               <button
                 type="submit"
                 disabled={formik.isSubmitting}
