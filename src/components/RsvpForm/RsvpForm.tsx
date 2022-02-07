@@ -69,7 +69,7 @@ const RsvpForm = ({
     isBringingGuest: false,
     guestName: "",
     isBringingChildren: false,
-    numberOfChildren: undefined,
+    numberOfChildren: 0,
     otherNotes: "",
   };
 
@@ -91,8 +91,8 @@ const RsvpForm = ({
         <h2 className="RsvpForm__title">{wording.title}</h2>
         <hr />
         <div className="RsvpForm__description">
-          {wording.description.split("\n").map((part) => (
-            <p>{part}</p>
+          {wording.description.split("\n").map((part, i) => (
+            <p key={i}>{part}</p>
           ))}
           <hr />
         </div>
@@ -117,6 +117,7 @@ const RsvpForm = ({
               method="post"
               data-netlify="true"
               data-netlify-honeypot="bot-field"
+              data-netlify-recaptcha="true"
             >
               <input type="hidden" name="form-name" value="rsvp" />
               <FormLine id="name">
@@ -180,6 +181,7 @@ const RsvpForm = ({
                   <Field type="text" as="textarea" name="otherNotes" />
                 </label>
               </FormLine>
+              <div data-netlify-recaptcha="true"></div>
               <button
                 type="submit"
                 disabled={formik.isSubmitting}
