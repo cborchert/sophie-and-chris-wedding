@@ -117,6 +117,7 @@ const RsvpForm = ({
               method="post"
               data-netlify="true"
               data-netlify-honeypot="bot-field"
+              data-netlify-recaptcha="true"
             >
               <input type="hidden" name="form-name" value="rsvp" />
               <FormLine id="name">
@@ -145,15 +146,14 @@ const RsvpForm = ({
                   {wording.bringingGuestLabel}
                   <Field type="checkbox" name="isBringingGuest" />
                 </label>
-                {(formik.values.isBringingGuest && (
-                  <FormLine id="guest">
-                    <label>
-                      {wording.guestNameLabel}
-                      <Field type="text" name="guestName" />
-                    </label>
-                    <FormError name="guestName" formik={formik} />
-                  </FormLine>
-                )) || <FormSpacer />}
+                <FormLine id="guest" hidden={!formik.values.isBringingGuest}>
+                  <label>
+                    {wording.guestNameLabel}
+                    <Field type="text" name="guestName" />
+                  </label>
+                  <FormError name="guestName" formik={formik} />
+                </FormLine>
+                {~!formik.values.isBringingGuest && <FormSpacer />}
               </FormLine>
 
               <FormLine id="bringingChildren">
@@ -161,15 +161,18 @@ const RsvpForm = ({
                   {wording.bringingChildrenLabel}
                   <Field type="checkbox" name="isBringingChildren" />
                 </label>
-                {(formik.values.isBringingChildren && (
-                  <FormLine id="numberOfChildren">
-                    <label>
-                      {wording.howManyChildrenLabel}
-                      <Field type="number" name="numberOfChildren" />
-                    </label>
-                    <FormError name="numberOfChildren" formik={formik} />
-                  </FormLine>
-                )) || <FormSpacer />}
+
+                <FormLine
+                  id="numberOfChildren"
+                  hidden={!formik.values.isBringingChildren}
+                >
+                  <label>
+                    {wording.howManyChildrenLabel}
+                    <Field type="number" name="numberOfChildren" />
+                  </label>
+                  <FormError name="numberOfChildren" formik={formik} />
+                </FormLine>
+                {!formik.values.isBringingChildren && <FormSpacer />}
               </FormLine>
 
               <FormLine id="otherNotes">
