@@ -53,20 +53,6 @@ const Hero = ({
           >
             {rsvpCta}
           </button>
-          <button
-            onClick={() => {
-              sendNotification(Date.now().toString(), {
-                type:
-                  Math.random() < 0.33
-                    ? NotificationType.SUCCESS
-                    : Math.random() < 0.5
-                    ? NotificationType.ERROR
-                    : NotificationType.INFO,
-              });
-            }}
-          >
-            SEND IT
-          </button>
         </div>
       </section>
       <RsvpForm
