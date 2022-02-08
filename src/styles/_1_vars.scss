@@ -3,12 +3,15 @@
   --bg: #222228;
   --bg-2: var(--fg);
   --fg-2: var(--bg);
-  --error: #f00;
+  --error: #e74c3c;
+  --success: #2ecc71;
+  --info: #2980b9;
   --font-text: "Georgia", serif;
   --font-heading: "Great Vibes", "Georgia", serif, serif;
   --font-text: "Noto Serif", "Georgia", serif;
   --border-radius: 3px;
   --border-color: #aaa;
+  --box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.8);
 
   --sp: 4px;
   --sp-1: var(--sp);

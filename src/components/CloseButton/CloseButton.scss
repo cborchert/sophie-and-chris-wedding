@@ -6,6 +6,7 @@
   height: 40px;
   opacity: 0.6;
   cursor: pointer;
+  background: transparent;
   &:before,
   &:after {
     display: block;
@@ -24,5 +25,14 @@
   }
   &:hover {
     opacity: 1;
+    background: transparent;
+    border: none;
+  }
+
+  &.is-alt {
+    &:before,
+    &:after {
+      border-bottom-color: var(--fg);
+    }
   }
 }

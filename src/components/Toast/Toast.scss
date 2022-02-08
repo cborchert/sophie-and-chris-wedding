@@ -1,12 +1,21 @@
 .Toast {
   border-radius: var(--border-radius);
-  background: var(--fg);
-  color: var(--bg);
+  background: var(--info);
+  color: var(--fg);
   position: relative;
   display: flex;
   flex-direction: row;
-  width: 300px;
+  width: 400px;
+  max-width: 100%;
   margin: var(--sp-3);
+  box-shadow: var(--box-shadow);
+  font-weight: bold;
+  &.Toast--success {
+    background: var(--success);
+  }
+  &.Toast--error {
+    background: var(--error);
+  }
 }
 
 .ToastMessage {

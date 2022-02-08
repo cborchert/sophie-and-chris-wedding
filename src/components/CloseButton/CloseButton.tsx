@@ -3,12 +3,17 @@ import "./CloseButton.scss";
 
 const CloseButton = ({
   className,
+  light,
   ...props
 }: {
   className?: string;
-  [k: string]: any;
+  light?: boolean;
+  [key: string]: any;
 }) => (
-  <button className={classNames("CloseButton", className)} {...props}></button>
+  <button
+    className={classNames("CloseButton", className, { "is-alt": light })}
+    {...props}
+  ></button>
 );
 
 export default CloseButton;

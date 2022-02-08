@@ -5,6 +5,7 @@ import Hibiscus01 from "../../images/hibiscus-1c.png";
 import Hibiscus02 from "../../images/hibiscus-2c.png";
 
 import "./Hero.scss";
+import { NotificationType, sendNotification } from "../../utils/notifications";
 
 type PropTypes = {
   wording: i18nHeroWording;
@@ -51,6 +52,20 @@ const Hero = ({
             className="button--large button--spaced"
           >
             {rsvpCta}
+          </button>
+          <button
+            onClick={() => {
+              sendNotification(Date.now().toString(), {
+                type:
+                  Math.random() < 0.33
+                    ? NotificationType.SUCCESS
+                    : Math.random() < 0.5
+                    ? NotificationType.ERROR
+                    : NotificationType.INFO,
+              });
+            }}
+          >
+            SEND IT
           </button>
         </div>
       </section>

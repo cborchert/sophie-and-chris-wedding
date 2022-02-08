@@ -45,13 +45,13 @@ button,
   transition: 300ms;
 
   &:hover {
-    background: var(--fg);
-    color: var(--bg);
+    background: var(--bg-2);
+    color: var(--fg-2);
   }
 
   &.button--alt {
-    border: 1px solid var(--bg);
-    color: var(--bg);
+    border: 1px solid var(--fg-2);
+    color: var(--fg-2);
     &:hover {
       background: var(--bg);
       color: var(--fg);
