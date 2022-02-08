@@ -1,6 +1,6 @@
 ---
+import ToastDispatcher from "../Toast/ToastDispatcher.tsx";
 import Hero from "../Hero/Hero.tsx"; 
-// import Intro from "../Intro/Intro";
 // import Program from "../Program/Program";
 // import Location from "../Location/Location";
 // import Lodging from "../Lodging/Lodging";
@@ -10,6 +10,7 @@ const { i18n } = Astro.props;
 ---
 
     <main className="Home">
+     <ToastDispatcher client:load />
      <Hero wording={i18n.hero} rsvpWording={i18n.rsvp} client:load />
     <!-- <Intro i18n={i18n.intro} />
     <Location i18={i18n.location} />

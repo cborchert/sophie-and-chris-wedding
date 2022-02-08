@@ -1,5 +1,5 @@
 import type { Node } from "react";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { Formik, Form, Field, ErrorMessage } from "formik";
 import { object, string, boolean, number, InferType } from "yup";
 import classNames from "classnames";
@@ -8,6 +8,8 @@ import FormSpacer from "../form/FormSpacer/FormSpacer";
 import FormLine from "../form/FormLine/FormLine";
 import FormError from "../form/FormError/FormError";
 import CloseButton from "../CloseButton/CloseButton";
+
+import { sendNotification, NotificationType } from "../../utils/notifications";
 
 import "./RsvpForm.scss";
 
@@ -99,7 +101,7 @@ const RsvpForm = ({
         <Formik
           initialValues={defaultValues}
           validationSchema={responseSchema}
-          onSubmit={(values, { setSubmitting }) => {
+          onSubmit={(values, { setSubmitting, resetForm }) => {
             handleSuccess();
             setSubmitting(false);
             fetch("/", {
@@ -107,8 +109,32 @@ const RsvpForm = ({
               headers: { "Content-Type": "application/x-www-form-urlencoded" },
               body: encode({ "form-name": "rsvp", ...values }),
             })
-              .then((a) => console.log({ a }))
-              .catch((e) => alert({ e }));
+              .then(({ ok, status }) => {
+                if (!ok || status !== 200) {
+                  throw new Error("Failed submitting rsvp form");
+                }
+                if (values.isAttending === "yes") {
+                  sendNotification(
+                    "Thanks for responding! We look forward to seeing you!",
+                    {
+                      type: NotificationType.SUCCESS,
+                    }
+                  );
+                } else {
+                  sendNotification(
+                    "Thanks for responding. We'll miss seeing you!",
+                    {
+                      type: NotificationType.INFO,
+                    }
+                  );
+                }
+                resetForm();
+              })
+              .catch((e) => {
+                sendNotification("Something went wrong. Please try again.", {
+                  type: NotificationType.ERROR,
+                });
+              });
           }}
         >
           {(formik) => (

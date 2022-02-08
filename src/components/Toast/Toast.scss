@@ -1,0 +1,15 @@
+.Toast {
+  border-radius: var(--border-radius);
+  background: var(--fg);
+  color: var(--bg);
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  width: 300px;
+  margin: var(--sp-3);
+}
+
+.ToastMessage {
+  padding: var(--sp-3) var(--sp-4);
+  flex-grow: 1;
+}
