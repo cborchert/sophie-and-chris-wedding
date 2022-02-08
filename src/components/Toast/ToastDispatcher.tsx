@@ -1,13 +1,18 @@
-import { Transition, animated } from "react-spring";
+import { Transition, animated, config } from "react-spring";
+
 import { useNotifications } from "../../utils/notifications";
+import useMounted from "../../utils/useMounted";
+
 import Toast from "./Toast";
 
 import "./ToastDispatcher.scss";
 
 const ToastDispatcher = () => {
   const { notifications: toasts } = useNotifications();
+  const ssr = useMounted();
 
-  console.log({ Transition, animated });
+  if (!ssr) return <></>;
+
   return (
     <div className="ToastDispatcher">
       <Transition
@@ -15,6 +20,7 @@ const ToastDispatcher = () => {
         from={{ opacity: 0, transform: "translateX(200%)" }}
         enter={{ opacity: 1, transform: "translateX(0%)" }}
         leave={{ opacity: 0 }}
+        config={config.gentle}
         children={(style, toast) => {
           return (
             <animated.div style={style}>
