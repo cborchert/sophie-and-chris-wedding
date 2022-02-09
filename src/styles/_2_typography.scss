@@ -13,3 +13,18 @@ h5 {
   font-weight: bold;
   font-style: italic;
 }
+
+a,
+.link {
+  margin: 0;
+  padding: 0;
+  border: none;
+  font-style: italic;
+  opacity: 0.6;
+  &:hover {
+    background: transparent;
+    color: var(--fg);
+    text-decoration: underline;
+    opacity: 1;
+  }
+}

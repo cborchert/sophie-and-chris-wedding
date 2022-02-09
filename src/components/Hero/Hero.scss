@@ -60,3 +60,8 @@ $flowerBaseWidth: 280px;
     }
   }
 }
+
+.Hero__rsvpButton--hidden {
+  opacity: 0;
+  transition: 0s;
+}

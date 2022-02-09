@@ -42,11 +42,15 @@ button,
   padding: var(--sp-1) var(--sp-4);
   background-color: transparent;
   cursor: pointer;
-  transition: 300ms;
+  transition: color 300ms, background-color 300ms;
 
   &:hover {
     background: var(--bg-2);
     color: var(--fg-2);
+  }
+
+  &.button--text {
+    @extend .link;
   }
 
   &.button--alt {

@@ -5,6 +5,7 @@ declare type i18nHeroWording = {
   date: string;
   location: string;
   rsvpCta: string;
+  rsvpPreviouslySubmittedCta: string;
 };
 
 declare type i18nRsvpWording = {

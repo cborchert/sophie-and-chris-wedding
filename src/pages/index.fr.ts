@@ -6,6 +6,8 @@ const i18n: i18nWording = {
     date: "August 13th, 2022",
     location: "Jouy-le-Moutier, France",
     rsvpCta: "RSVP",
+    rsvpPreviouslySubmittedCta:
+      "You have already RSVP'd. Click here to send a new response",
   },
   rsvp: {
     title: "RSVP",
