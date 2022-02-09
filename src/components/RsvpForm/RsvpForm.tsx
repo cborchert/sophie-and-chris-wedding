@@ -1,6 +1,5 @@
-import type { Node } from "react";
-import { useState, useEffect } from "react";
-import { Formik, Form, Field, ErrorMessage } from "formik";
+import { useState } from "react";
+import { Formik, Form, Field } from "formik";
 import { object, string, boolean, number, InferType } from "yup";
 import classNames from "classnames";
 
@@ -8,6 +7,7 @@ import FormSpacer from "../form/FormSpacer/FormSpacer";
 import FormLine from "../form/FormLine/FormLine";
 import FormError from "../form/FormError/FormError";
 import CloseButton from "../CloseButton/CloseButton";
+import { CONFETTI_CUSTOM_EVENT } from "../ConfettiProvider/ConfettiProvider";
 
 import { sendNotification, NotificationType } from "../../utils/notifications";
 
@@ -114,6 +114,7 @@ const RsvpForm = ({
                   throw new Error("Failed submitting rsvp form");
                 }
                 if (values.isAttending === "yes") {
+                  window.dispatchEvent(new Event(CONFETTI_CUSTOM_EVENT));
                   sendNotification(
                     "Thanks for responding! We look forward to seeing you!",
                     {

@@ -1,9 +1,7 @@
 import { useState } from "react";
 
 import RsvpForm, { FormState } from "../RsvpForm/RsvpForm";
-import ConfettiBlast from "../ConfettiBlast/ConfettiBlast";
-
-import { NotificationType, sendNotification } from "../../utils/notifications";
+import ConfettiProvider from "../ConfettiProvider/ConfettiProvider";
 
 import Hibiscus01 from "../../images/hibiscus-1c.png";
 import Hibiscus02 from "../../images/hibiscus-2c.png";
@@ -57,15 +55,9 @@ const Hero = ({
           >
             {rsvpCta}
           </button>
-          <button
-            onClick={() => setConfettiTriggered(Date.now())}
-            className="button--large button--spaced"
-          >
-            BLAST IT
-          </button>
         </div>
       </section>
-      <ConfettiBlast triggeredTime={confettiTriggered} />
+      <ConfettiProvider />
       <RsvpForm
         state={formState}
         handleCancel={() => setFormState(FormState.CLOSED)}
