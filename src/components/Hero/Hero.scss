@@ -9,9 +9,25 @@ $flowerBaseWidth: 280px;
   align-items: center;
   height: 100vh;
 
+  .Hero__title {
+    margin-bottom: var(--sp-4);
+  }
+
   h1 {
-    font-size: 5rem;
-    line-height: 1.125;
+    font-size: 6rem;
+    line-height: 1.25;
+  }
+
+  h2 {
+    font-size: 2.3rem;
+    line-height: 1.25;
+    letter-spacing: 1px;
+  }
+
+  h3 {
+    font-size: 1.4rem;
+    line-height: 1.5;
+    letter-spacing: 1px;
   }
 
   hr {

@@ -7,7 +7,7 @@ const i18n: i18nWording = {
     location: "Jouy-le-Moutier, France",
     rsvpCta: "RSVP",
     rsvpPreviouslySubmittedCta:
-      "You have already RSVP'd. Click here to send a new response",
+      "You have already RSVP'd. Click here to send a new response.",
   },
   rsvp: {
     title: "RSVP",

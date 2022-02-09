@@ -68,14 +68,16 @@ const Hero = ({
           />
         </div>
         <div className="Hero__inner">
-          <h1>
-            {nameOne} <span>{and}</span> {nameTwo}
-          </h1>
-          <h2>{date}</h2>
-          <h3>{location}</h3>
+          <div className="Hero__title">
+            <h1>
+              {nameOne} <span>{and}</span> {nameTwo}
+            </h1>
+            <h2>{date}</h2>
+            <h3>{location}</h3>
+          </div>
           <button
             onClick={() => setFormState(FormState.OPEN)}
-            className={classNames("button--spaced", "button--large", {
+            className={classNames("button--large", {
               "Hero__rsvpButton--hidden": !rsvpEnabled,
               "button--text": rsvpEnabled && formSubmissionDate,
             })}
