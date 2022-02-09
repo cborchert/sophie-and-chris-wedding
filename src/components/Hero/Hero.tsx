@@ -1,11 +1,14 @@
 import { useState } from "react";
 
 import RsvpForm, { FormState } from "../RsvpForm/RsvpForm";
+import ConfettiBlast from "../ConfettiBlast/ConfettiBlast";
+
+import { NotificationType, sendNotification } from "../../utils/notifications";
+
 import Hibiscus01 from "../../images/hibiscus-1c.png";
 import Hibiscus02 from "../../images/hibiscus-2c.png";
 
 import "./Hero.scss";
-import { NotificationType, sendNotification } from "../../utils/notifications";
 
 type PropTypes = {
   wording: i18nHeroWording;
@@ -18,6 +21,7 @@ const Hero = ({
 }: PropTypes) => {
   const [formState, setFormState] = useState<FormState>(FormState.CLOSED);
 
+  const [confettiTriggered, setConfettiTriggered] = useState<number>();
   return (
     <>
       <section className="Hero">
@@ -53,8 +57,15 @@ const Hero = ({
           >
             {rsvpCta}
           </button>
+          <button
+            onClick={() => setConfettiTriggered(Date.now())}
+            className="button--large button--spaced"
+          >
+            BLAST IT
+          </button>
         </div>
       </section>
+      <ConfettiBlast triggeredTime={confettiTriggered} />
       <RsvpForm
         state={formState}
         handleCancel={() => setFormState(FormState.CLOSED)}

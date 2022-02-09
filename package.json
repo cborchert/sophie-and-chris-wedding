@@ -16,6 +16,8 @@
     "@astrojs/renderer-react": "^0.4.1",
     "classnames": "^2.3.1",
     "formik": "^2.2.9",
+    "react-confetti": "^6.0.1",
+    "react-dom-confetti": "^0.2.0",
     "react-spring": "^9.4.2",
     "yup": "^0.32.11"
   }

@@ -9,9 +9,9 @@ import "./ToastDispatcher.scss";
 
 const ToastDispatcher = () => {
   const { notifications: toasts } = useNotifications();
-  const ssr = useMounted();
+  const clientRendered = useMounted();
 
-  if (!ssr) return <></>;
+  if (!clientRendered) return <></>;
 
   return (
     <div className="ToastDispatcher">

@@ -1,7 +1,9 @@
 import { useEffect, useState } from "react";
 
-export const ADD_NOTIFICATION = "ADD_NOTIFICATION";
-export const REMOVE_NOTIFICATION = "REMOVE_NOTIFICATION";
+export const NOTIFICATION = "NOTIFICATION";
+
+export const getRemovedNotificationType = (notificationType = NOTIFICATION) =>
+  `${notificationType}__removed`;
 
 export enum NotificationType {
   SUCCESS,
@@ -13,6 +15,7 @@ export type NotificationOptions = {
   permanent?: boolean;
   duration?: number;
   type?: NotificationType;
+  notificationType?: string;
 };
 
 export type Notification = {
@@ -20,6 +23,25 @@ export type Notification = {
   id: string;
   options?: NotificationOptions;
   created: number;
+};
+
+export const sendSimpleNotification = (
+  detail: { id?: string | number },
+  notificationType: string = NOTIFICATION
+) => {
+  if (typeof window === "undefined") {
+    return;
+  }
+
+  const id = detail?.id || `${Date.now()}`;
+  const notification = new CustomEvent(notificationType, {
+    detail: {
+      id,
+      created: Date.now(),
+      ...detail,
+    },
+  });
+  window.dispatchEvent(notification);
 };
 
 export const sendNotification = (
@@ -34,9 +56,10 @@ export const sendNotification = (
     duration = 5000,
     type = NotificationType.INFO,
     id: assignedId,
+    notificationType = NOTIFICATION,
   } = options || {};
   const id = assignedId ? assignedId : `${Date.now()}`;
-  const notification = new CustomEvent(ADD_NOTIFICATION, {
+  const notification = new CustomEvent(notificationType, {
     detail: {
       message,
       id,
@@ -51,15 +74,18 @@ export const sendNotification = (
   window.dispatchEvent(notification);
 };
 
-export const removeNotification = (id: string) => {
+export const removeNotification = (id: string, notificationType?: string) => {
   if (typeof window === "undefined") {
     return;
   }
-  const notification = new CustomEvent(REMOVE_NOTIFICATION, {
-    detail: {
-      id,
-    },
-  });
+  const notification = new CustomEvent(
+    getRemovedNotificationType(notificationType),
+    {
+      detail: {
+        id,
+      },
+    }
+  );
   window.dispatchEvent(notification);
 };
 
@@ -68,9 +94,13 @@ const noOp = () => {};
 export const useNotifications = (config?: {
   onAddNotification?: (Notification) => void;
   onRemoveNotification?: (string) => void;
+  notificationType?: string;
 }) => {
-  const { onAddNotification = noOp, onRemoveNotification = noOp } =
-    config || {};
+  const {
+    onAddNotification = noOp,
+    onRemoveNotification = noOp,
+    notificationType = NOTIFICATION,
+  } = config || {};
   const [notifications, setNotifications] = useState<Notification[]>([]);
 
   useEffect(() => {
@@ -104,14 +134,17 @@ export const useNotifications = (config?: {
     };
 
     if (typeof window !== "undefined") {
-      window.addEventListener(ADD_NOTIFICATION, addNotificationHandler);
-      window.addEventListener(REMOVE_NOTIFICATION, removeNotificationHandler);
+      window.addEventListener(notificationType, addNotificationHandler);
+      window.addEventListener(
+        getRemovedNotificationType(notificationType),
+        removeNotificationHandler
+      );
     }
     return () => {
       if (typeof window !== "undefined") {
-        window.removeEventListener(ADD_NOTIFICATION, addNotificationHandler);
+        window.removeEventListener(notificationType, addNotificationHandler);
         window.removeEventListener(
-          REMOVE_NOTIFICATION,
+          getRemovedNotificationType(notificationType),
           removeNotificationHandler
         );
       }
