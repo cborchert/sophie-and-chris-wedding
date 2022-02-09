@@ -66,8 +66,8 @@ const RsvpForm = ({
   interface Response extends InferType<typeof responseSchema> {}
 
   const defaultValues: Response = {
-    name: undefined,
-    isAttending: undefined,
+    name: "",
+    isAttending: "",
     isBringingGuest: false,
     guestName: "",
     isBringingChildren: false,
