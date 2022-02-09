@@ -1,4 +1,3 @@
-import { useState } from "react";
 import { Formik, Form, Field } from "formik";
 import { object, string, boolean, number, InferType } from "yup";
 import classNames from "classnames";
@@ -32,12 +31,7 @@ const encode = (data) => {
     .join("&");
 };
 
-const RsvpForm = ({
-  state,
-  handleCancel,
-  handleSuccess,
-  wording,
-}: PropTypes) => {
+const getFormikValues = (wording) => {
   const responseSchema = object({
     name: string().required(wording.requiredError),
     isAttending: string()
@@ -75,7 +69,20 @@ const RsvpForm = ({
     otherNotes: "",
   };
 
-  const [isSubmitted, setIsSubmitted] = useState<boolean>(false);
+  return {
+    responseSchema,
+    defaultValues,
+  };
+};
+
+const RsvpForm = ({
+  state,
+  handleCancel,
+  handleSuccess,
+  wording,
+}: PropTypes) => {
+  const { responseSchema, defaultValues } = getFormikValues(wording);
+
   const attendingWording = {
     yes: wording.submitIsAttending,
     no: wording.submitIsNotAttending,
