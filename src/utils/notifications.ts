@@ -25,6 +25,8 @@ export type Notification = {
   created: number;
 };
 
+const DEFAULT_DURATION = 8000;
+
 export const sendSimpleNotification = (
   detail: { id?: string | number },
   notificationType: string = NOTIFICATION
@@ -53,7 +55,7 @@ export const sendNotification = (
   }
   const {
     permanent = false,
-    duration = 5000,
+    duration = DEFAULT_DURATION,
     type = NotificationType.INFO,
     id: assignedId,
     notificationType = NOTIFICATION,

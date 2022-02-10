@@ -24,7 +24,20 @@ const ConfettiBlast = () => {
   const clientRendered = useMounted();
   if (!clientRendered || !triggeredTime) return <></>;
 
-  return <Confetti key={triggeredTime} recycle={false} numberOfPieces={800} />;
+  return (
+    <Confetti
+      key={triggeredTime}
+      recycle={false}
+      numberOfPieces={800}
+      confettiSource={{
+        x: 0,
+        y: window.innerHeight,
+        w: window.innerWidth,
+        h: 0,
+      }}
+      initialVelocityY={{ min: -10, max: -20 }}
+    />
+  );
 };
 
 export default ConfettiBlast;
