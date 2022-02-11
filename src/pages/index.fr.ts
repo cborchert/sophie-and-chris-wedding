@@ -30,6 +30,9 @@ const i18n: i18nWording = {
     submitIsAttending: "I will be attending",
     submitIsNotAttending: "With regrets",
   },
+  program: {},
+  location: {},
+  lodging: {},
   pageTitle: "On se marie",
 };
 

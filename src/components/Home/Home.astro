@@ -1,19 +1,21 @@
 ---
-import ToastDispatcher from "../Toast/ToastDispatcher.tsx";
+import ConfettiProvider from '../ConfettiProvider/ConfettiProvider.tsx';
 import Hero from "../Hero/Hero.tsx"; 
-// import Program from "../Program/Program";
-// import Location from "../Location/Location";
-// import Lodging from "../Lodging/Lodging";
+import Location from "../Location/Location.tsx";
+import Lodging from "../Lodging/Lodging.tsx";
+import Program from "../Program/Program.tsx";
+import RsvpForm from "../RsvpForm/RsvpForm.tsx";
+import ToastDispatcher from "../Toast/ToastDispatcher.tsx";
 
 const { i18n } = Astro.props; 
-
 ---
 
-    <main className="Home">
-     <ToastDispatcher client:load />
-     <Hero wording={i18n.hero} rsvpWording={i18n.rsvp} client:load />
-    <!-- <Intro i18n={i18n.intro} />
-    <Location i18={i18n.location} />
-    <Program i18n={i18n.program} />
-    <Lodging i18n={i18n.lodging} />  -->
-    </main>
+<main className="Home">
+    <ToastDispatcher client:load />
+    <ConfettiProvider client:load />
+    <Hero wording={i18n.hero} client:load />
+    <RsvpForm wording={i18n.rsvp} client:load />
+    <!-- <Program wording={i18n.program} />
+    <Location wording={i18n.location} />
+    <Lodging wording={i18n.lodging} /> -->
+</main>

@@ -1,21 +1,23 @@
 import { useState, useEffect } from "react";
+import classNames from "classnames";
 
-import RsvpForm, { FormState } from "../RsvpForm/RsvpForm";
+import RsvpForm, {
+  RSVP_FORM_OPENED_EVENT,
+  RSVP_FORM_SUBMISSION_DATE,
+  RSVP_FORM_SUBMITTED_EVENT,
+} from "../RsvpForm/RsvpForm";
 import ConfettiProvider from "../ConfettiProvider/ConfettiProvider";
+import useMounted from "../../utils/useMounted";
 
 import Hibiscus01 from "../../images/hibiscus-1c.png";
 import Hibiscus02 from "../../images/hibiscus-2c.png";
 
 import "./Hero.scss";
-import useMounted from "../../utils/useMounted";
-import classNames from "classnames";
 
 type PropTypes = {
   wording: i18nHeroWording;
   rsvpWording: i18nRsvpWording;
 };
-
-const FORM_SUBMISSION_DATE = "formSubmissionDate";
 
 const Hero = ({
   wording: {
@@ -29,17 +31,28 @@ const Hero = ({
   },
   rsvpWording,
 }: PropTypes) => {
-  const [formState, setFormState] = useState<FormState>(FormState.CLOSED);
-  const [formSubmissionDate, setFormSubmissionDate] = useState<string>();
+  const [formSubmitted, setFormSubmitted] = useState<boolean>(false);
 
   /**
    * Fetch the form submission date from the localstorage
    */
   useEffect(() => {
-    const prevFormSubmissionDate =
-      window.localStorage.getItem(FORM_SUBMISSION_DATE);
-    console;
-    setFormSubmissionDate(prevFormSubmissionDate);
+    const prevFormSubmissionDate = window.localStorage.getItem(
+      RSVP_FORM_SUBMISSION_DATE
+    );
+    setFormSubmitted(!!prevFormSubmissionDate);
+    const onFormSubmit = () => {
+      setFormSubmitted(true);
+    };
+
+    if (typeof window !== "undefined") {
+      window.addEventListener(RSVP_FORM_SUBMITTED_EVENT, onFormSubmit);
+    }
+    return () => {
+      if (typeof window !== "undefined") {
+        window.removeEventListener(RSVP_FORM_SUBMITTED_EVENT, onFormSubmit);
+      }
+    };
   }, []);
 
   const rsvpEnabled = useMounted();
@@ -76,29 +89,19 @@ const Hero = ({
             <h3>{location}</h3>
           </div>
           <button
-            onClick={() => setFormState(FormState.OPEN)}
+            onClick={() => {
+              window.dispatchEvent(new Event(RSVP_FORM_OPENED_EVENT));
+            }}
             className={classNames("button--large", {
               "Hero__rsvpButton--hidden": !rsvpEnabled,
-              "button--text": rsvpEnabled && formSubmissionDate,
+              "button--text": rsvpEnabled && formSubmitted,
             })}
             disabled={!rsvpEnabled}
           >
-            {formSubmissionDate ? rsvpPreviouslySubmittedCta : rsvpCta}
+            {formSubmitted ? rsvpPreviouslySubmittedCta : rsvpCta}
           </button>
         </div>
       </section>
-      <ConfettiProvider />
-      <RsvpForm
-        state={formState}
-        handleCancel={() => setFormState(FormState.CLOSED)}
-        handleSuccess={() => {
-          const submissionDate = Date.now().toString();
-          window.localStorage.setItem(FORM_SUBMISSION_DATE, submissionDate);
-          setFormSubmissionDate(submissionDate);
-          setFormState(FormState.SUBMITTED);
-        }}
-        wording={rsvpWording}
-      />
     </>
   );
 };

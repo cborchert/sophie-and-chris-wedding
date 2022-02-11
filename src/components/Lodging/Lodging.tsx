@@ -1,7 +1,9 @@
 import "./Lodging.scss";
 
-export default Lodging = ({}) => (
+const Lodging = ({ i18n }) => (
   <section className="Lodging">
     <h1>Lodging</h1>
   </section>
 );
+
+export default Lodging;

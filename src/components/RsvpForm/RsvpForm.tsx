@@ -1,3 +1,4 @@
+import { useState, useEffect } from "react";
 import { Formik, Form, Field } from "formik";
 import { object, string, boolean, number, InferType } from "yup";
 import classNames from "classnames";
@@ -18,10 +19,13 @@ export enum FormState {
   SUBMITTED,
 }
 
+export const RSVP_FORM_SUBMISSION_DATE = "formSubmissionDate";
+export const RSVP_FORM_OPENED_EVENT = "RSVP_FORM_OPENED";
+export const RSVP_FORM_SUBMITTED_EVENT = "RSVP_FORM_SUBMITTED";
+
 type PropTypes = {
   state?: FormState;
   handleCancel?: () => void;
-  handleSuccess?: () => void;
   wording: i18nRsvpWording;
 };
 
@@ -75,13 +79,25 @@ const getFormikValues = (wording) => {
   };
 };
 
-const RsvpForm = ({
-  state,
-  handleCancel,
-  handleSuccess,
-  wording,
-}: PropTypes) => {
+const RsvpForm = ({ wording }: PropTypes) => {
+  const [state, setState] = useState<FormState>(FormState.CLOSED);
+
   const { responseSchema, defaultValues } = getFormikValues(wording);
+
+  useEffect(() => {
+    const setOpen = () => {
+      setState(FormState.OPEN);
+    };
+
+    if (typeof window !== "undefined") {
+      window.addEventListener(RSVP_FORM_OPENED_EVENT, setOpen);
+    }
+    return () => {
+      if (typeof window !== "undefined") {
+        window.removeEventListener(RSVP_FORM_OPENED_EVENT, setOpen);
+      }
+    };
+  }, []);
 
   const attendingWording = {
     yes: wording.submitIsAttending,
@@ -95,7 +111,12 @@ const RsvpForm = ({
         "is-submitted": state === FormState.SUBMITTED,
       })}
     >
-      <CloseButton className="RsvpForm__closeButton" onClick={handleCancel} />
+      <CloseButton
+        className="RsvpForm__closeButton"
+        onClick={() => {
+          setState(FormState.CLOSED);
+        }}
+      />
       <div className="RsvpForm__inner">
         <h2 className="RsvpForm__title">{wording.title}</h2>
         <hr />
@@ -109,7 +130,13 @@ const RsvpForm = ({
           initialValues={defaultValues}
           validationSchema={responseSchema}
           onSubmit={(values, { setSubmitting, resetForm }) => {
-            handleSuccess();
+            const submissionDate = Date.now().toString();
+            window.localStorage.setItem(
+              RSVP_FORM_SUBMISSION_DATE,
+              submissionDate
+            );
+            window.dispatchEvent(new Event(RSVP_FORM_SUBMITTED_EVENT));
+            setState(FormState.SUBMITTED);
             setSubmitting(false);
             fetch("/", {
               method: "POST",
