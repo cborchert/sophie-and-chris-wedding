@@ -101,12 +101,13 @@ const RsvpForm = ({ wording }: PropTypes) => {
         "is-submitted": state === FormState.SUBMITTED,
       })}
     >
-      <CloseButton
-        className="RsvpForm__closeButton"
-        onClick={() => {
-          setState(FormState.CLOSED);
-        }}
-      />
+      <div className="RsvpForm__closeButton">
+        <CloseButton
+          onClick={() => {
+            setState(FormState.CLOSED);
+          }}
+        />
+      </div>
       <div className="RsvpForm__inner">
         <h2 className="RsvpForm__title">{wording.title}</h2>
         <hr />
