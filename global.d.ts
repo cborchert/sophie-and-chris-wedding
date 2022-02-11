@@ -29,9 +29,18 @@ declare type i18nRsvpWording = {
   submitIsNotAttending: string;
 };
 
+declare type i18nProgramWording = {};
+
+declare type i18nLocationWording = {};
+
+declare type i18nLodgingWording = {};
+
 declare type i18nWording = {
   hero: i18nHeroWording;
   rsvp: i18nRsvpWording;
+  program: i18nProgramWording;
+  location: i18nLocationWording;
+  lodging: i18nLodgingWording;
   pageTitle: string;
 };
 
