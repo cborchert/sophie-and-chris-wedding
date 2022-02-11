@@ -12,6 +12,7 @@ import { CONFETTI_CUSTOM_EVENT } from "../ConfettiProvider/ConfettiProvider";
 import { sendNotification, NotificationType } from "../../utils/notifications";
 
 import "./RsvpForm.scss";
+import { trigger, useListener } from "../../utils/events";
 
 export enum FormState {
   CLOSED,
@@ -84,20 +85,9 @@ const RsvpForm = ({ wording }: PropTypes) => {
 
   const { responseSchema, defaultValues } = getFormikValues(wording);
 
-  useEffect(() => {
-    const setOpen = () => {
-      setState(FormState.OPEN);
-    };
-
-    if (typeof window !== "undefined") {
-      window.addEventListener(RSVP_FORM_OPENED_EVENT, setOpen);
-    }
-    return () => {
-      if (typeof window !== "undefined") {
-        window.removeEventListener(RSVP_FORM_OPENED_EVENT, setOpen);
-      }
-    };
-  }, []);
+  useListener(RSVP_FORM_OPENED_EVENT, () => {
+    setState(FormState.OPEN);
+  });
 
   const attendingWording = {
     yes: wording.submitIsAttending,
@@ -135,7 +125,7 @@ const RsvpForm = ({ wording }: PropTypes) => {
               RSVP_FORM_SUBMISSION_DATE,
               submissionDate
             );
-            window.dispatchEvent(new Event(RSVP_FORM_SUBMITTED_EVENT));
+            trigger(RSVP_FORM_SUBMITTED_EVENT);
             setState(FormState.SUBMITTED);
             setSubmitting(false);
             fetch("/", {
@@ -148,7 +138,7 @@ const RsvpForm = ({ wording }: PropTypes) => {
                   throw new Error("Failed submitting rsvp form");
                 }
                 if (values.isAttending === "yes") {
-                  window.dispatchEvent(new Event(CONFETTI_CUSTOM_EVENT));
+                  trigger(CONFETTI_CUSTOM_EVENT);
                   sendNotification(
                     "Thanks for responding! We look forward to seeing you!",
                     {

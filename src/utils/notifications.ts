@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import { trigger } from "./events";
 
 export const NOTIFICATION = "NOTIFICATION";
 
@@ -27,25 +28,6 @@ export type Notification = {
 
 const DEFAULT_DURATION = 8000;
 
-export const sendSimpleNotification = (
-  detail: { id?: string | number },
-  notificationType: string = NOTIFICATION
-) => {
-  if (typeof window === "undefined") {
-    return;
-  }
-
-  const id = detail?.id || `${Date.now()}`;
-  const notification = new CustomEvent(notificationType, {
-    detail: {
-      id,
-      created: Date.now(),
-      ...detail,
-    },
-  });
-  window.dispatchEvent(notification);
-};
-
 export const sendNotification = (
   message: string,
   options?: NotificationOptions & { id?: string }
@@ -61,34 +43,25 @@ export const sendNotification = (
     notificationType = NOTIFICATION,
   } = options || {};
   const id = assignedId ? assignedId : `${Date.now()}`;
-  const notification = new CustomEvent(notificationType, {
-    detail: {
-      message,
-      id,
-      created: Date.now(),
-      options: {
-        permanent,
-        duration,
-        type,
-      },
+  trigger(notificationType, {
+    message,
+    id,
+    created: Date.now(),
+    options: {
+      permanent,
+      duration,
+      type,
     },
   });
-  window.dispatchEvent(notification);
 };
 
 export const removeNotification = (id: string, notificationType?: string) => {
   if (typeof window === "undefined") {
     return;
   }
-  const notification = new CustomEvent(
-    getRemovedNotificationType(notificationType),
-    {
-      detail: {
-        id,
-      },
-    }
-  );
-  window.dispatchEvent(notification);
+  trigger(getRemovedNotificationType(notificationType), {
+    id,
+  });
 };
 
 const noOp = () => {};

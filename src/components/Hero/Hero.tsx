@@ -13,6 +13,7 @@ import Hibiscus01 from "../../images/hibiscus-1c.png";
 import Hibiscus02 from "../../images/hibiscus-2c.png";
 
 import "./Hero.scss";
+import { trigger, useListener } from "../../utils/events";
 
 type PropTypes = {
   wording: i18nHeroWording;
@@ -41,19 +42,14 @@ const Hero = ({
       RSVP_FORM_SUBMISSION_DATE
     );
     setFormSubmitted(!!prevFormSubmissionDate);
-    const onFormSubmit = () => {
-      setFormSubmitted(true);
-    };
-
-    if (typeof window !== "undefined") {
-      window.addEventListener(RSVP_FORM_SUBMITTED_EVENT, onFormSubmit);
-    }
-    return () => {
-      if (typeof window !== "undefined") {
-        window.removeEventListener(RSVP_FORM_SUBMITTED_EVENT, onFormSubmit);
-      }
-    };
   }, []);
+
+  /**
+   * When the RSVP form is submitted, set the formSubmitted to true
+   */
+  useListener(RSVP_FORM_SUBMITTED_EVENT, () => {
+    setFormSubmitted(true);
+  });
 
   const rsvpEnabled = useMounted();
 
@@ -90,7 +86,7 @@ const Hero = ({
           </div>
           <button
             onClick={() => {
-              window.dispatchEvent(new Event(RSVP_FORM_OPENED_EVENT));
+              trigger(RSVP_FORM_OPENED_EVENT);
             }}
             className={classNames("button--large", {
               "Hero__rsvpButton--hidden": !rsvpEnabled,
