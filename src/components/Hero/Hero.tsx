@@ -14,6 +14,7 @@ import Hibiscus02 from "../../images/hibiscus-2c.png";
 
 import "./Hero.scss";
 import { trigger, useListener } from "../../utils/events";
+import { sendNotification } from "../../utils/notifications";
 
 type PropTypes = {
   wording: i18nHeroWording;

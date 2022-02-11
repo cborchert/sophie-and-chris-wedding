@@ -15,20 +15,11 @@ const ToastDispatcher = () => {
 
   return (
     <div className="ToastDispatcher">
-      <Transition
-        items={toasts.sort((a, b) => b.created - a.created)}
-        from={{ opacity: 0, transform: "translateX(200%)" }}
-        enter={{ opacity: 1, transform: "translateX(0%)" }}
-        leave={{ opacity: 0 }}
-        config={config.gentle}
-        children={(style, toast) => {
-          return (
-            <animated.div style={style}>
-              <Toast key={toast.id} {...toast} />
-            </animated.div>
-          );
-        }}
-      />
+      {toasts
+        .sort((a, b) => b.created - a.created)
+        .map((toast) => (
+          <Toast key={toast.id} {...toast} />
+        ))}
     </div>
   );
 };

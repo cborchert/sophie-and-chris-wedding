@@ -10,11 +10,53 @@
   margin: var(--sp-3);
   box-shadow: var(--box-shadow);
   font-weight: bold;
+
+  animation-name: ToastBounceIn;
+  animation-duration: 8000ms;
+  animation-timing-function: cubic-bezier(0.41, 1.7, 0.45, 0.85);
+
+  &.Toast--permanent {
+    animation-name: ToastBounceInStay;
+  }
   &.Toast--success {
     background: var(--success);
   }
   &.Toast--error {
     background: var(--error);
+  }
+}
+
+@keyframes ToastBounceIn {
+  0% {
+    transform: translateX(200%);
+    opacity: 0;
+  }
+  5% {
+    transform: translateX(0%);
+    opacity: 1;
+  }
+  95% {
+    transform: translateX(0%);
+    opacity: 1;
+  }
+  100% {
+    transform: translateX(200%);
+    opacity: 0;
+  }
+}
+
+@keyframes ToastBounceInStay {
+  0% {
+    transform: translateX(200%);
+    opacity: 0;
+  }
+  5% {
+    transform: translateX(0%);
+    opacity: 1;
+  }
+  100% {
+    transform: translateX(0%);
+    opacity: 1;
   }
 }
 
