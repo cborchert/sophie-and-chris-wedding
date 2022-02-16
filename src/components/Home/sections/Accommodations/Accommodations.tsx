@@ -1,3 +1,4 @@
+import Text from "../../../atoms/Text/Text";
 import "./Accommodations.scss";
 
 type PropTypes = {
@@ -5,8 +6,8 @@ type PropTypes = {
 };
 const Accommodations = ({ wording }: PropTypes) => (
   <section className="Accommodations">
-    <h1>{wording.title}</h1>
-    <p>{wording.description}</p>
+    <h2>{wording.title}</h2>
+    <Text>{wording.description}</Text>
   </section>
 );
 

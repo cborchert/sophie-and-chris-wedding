@@ -1,3 +1,4 @@
+import Text from "../../../atoms/Text/Text";
 import "./Program.scss";
 
 const Program = ({
@@ -16,11 +17,9 @@ const Program = ({
     <h2>{title}</h2>
     <p>{subheader}</p>
     <ul>
-      {timeline.map(({ time, event }) => (
-        <li>
-          {time} {event}
-        </li>
-      ))}
+      <Text as="li">
+        {timeline.map(({ time, event }) => `${time} ${event}`)}
+      </Text>
     </ul>
     <p>
       <strong>{recommendedAttireLabel}</strong> {recommendedAttireValue}

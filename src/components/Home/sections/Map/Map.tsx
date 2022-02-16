@@ -25,7 +25,7 @@ function Map({
       options={options}
     >
       {pins.map((pin) => (
-        <Marker {...pin} />
+        <Marker key={`${pin.position.lat},${pin.position.lng}`} {...pin} />
       ))}
     </GoogleMap>
   ) : (

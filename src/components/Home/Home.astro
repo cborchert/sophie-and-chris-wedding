@@ -15,7 +15,7 @@ const { i18n } = Astro.props;
     <ConfettiProvider client:load />
     <Hero wording={i18n.hero} client:load />
     <RsvpForm wording={i18n.rsvp} client:load />
-    <Program wording={i18n.program} />
+    <Program wording={i18n.program} client:load />
     <Location wording={i18n.location} client:load />
-    <Accommodations wording={i18n.accommodations} />
+    <Accommodations wording={i18n.accommodations} client:load />
 </main>

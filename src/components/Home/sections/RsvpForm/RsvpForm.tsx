@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import { Formik, Form, Field } from "formik";
 import { object, string, boolean, number, InferType } from "yup";
 import classNames from "classnames";
@@ -8,6 +8,7 @@ import FormLine from "../../../atoms/forms/FormLine/FormLine";
 import FormError from "../../../atoms/forms/FormError/FormError";
 import CloseButton from "../../../atoms/CloseButton/CloseButton";
 import { CONFETTI_CUSTOM_EVENT } from "../../../atoms/ConfettiProvider/ConfettiProvider";
+import Text from "../../../atoms/Text/Text";
 
 import {
   sendNotification,
@@ -115,9 +116,7 @@ const RsvpForm = ({ wording }: PropTypes) => {
         <h2 className="RsvpForm__title">{wording.title}</h2>
         <hr />
         <div className="RsvpForm__description">
-          {wording.description.split("\n").map((part, i) => (
-            <p key={i}>{part}</p>
-          ))}
+          <Text>{wording.description}</Text>
         </div>
         <hr />
         <Formik
