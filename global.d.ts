@@ -29,7 +29,14 @@ declare type i18nRsvpWording = {
   submitIsNotAttending: string;
 };
 
-declare type i18nProgramWording = {};
+declare type i18nProgramWording = {
+  title: string;
+  subheader: string;
+  recommendedAttireLabel: string;
+  recommendedAttireValue: string;
+  recommendedAttireNote: string;
+  timeline: { time: string; event: string }[];
+};
 
 type LatLng = {
   lat: number;
@@ -68,8 +75,3 @@ declare type i18nWording = {
   accommodations: i18nAccommodationsWording;
   pageTitle: string;
 };
-
-// declare module "*.png" {
-//   const value: any;
-//   export default value;
-// }

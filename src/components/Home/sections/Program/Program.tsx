@@ -1,22 +1,31 @@
 import "./Program.scss";
 
-const Program = ({}) => (
+const Program = ({
+  wording: {
+    title,
+    subheader,
+    recommendedAttireLabel,
+    recommendedAttireValue,
+    recommendedAttireNote,
+    timeline = [],
+  },
+}: {
+  wording: i18nProgramWording;
+}) => (
   <section className="Program">
-    <h1>Program</h1>
-    <p>We look forward to seeing you!</p>
+    <h2>{title}</h2>
+    <p>{subheader}</p>
     <ul>
-      <li>6pm: Exchange of vows</li>
-      <li>7pm: Cocktail hour</li>
-      <li>8pm: Dinner</li>
-      <li>10pm: Party</li>
+      {timeline.map(({ time, event }) => (
+        <li>
+          {time} {event}
+        </li>
+      ))}
     </ul>
-    <p>Recommended attire: (outdoor) casual.</p>
     <p>
-      Wear what you will feel comfortable in. The ceremony and dinner will take
-      place in an outdoor space, with an indoor space available during the
-      cocktail hour and soirée. Prepare for temperatures ranging from 25c (~80f)
-      in the early evening to 15c (~60f) at night.
+      <strong>{recommendedAttireLabel}</strong> {recommendedAttireValue}
     </p>
+    <p>{recommendedAttireNote}</p>
   </section>
 );
 

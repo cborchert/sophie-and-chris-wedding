@@ -30,7 +30,22 @@ const i18n: i18nWording = {
     submitIsAttending: "I will be attending",
     submitIsNotAttending: "With regrets",
   },
-  program: {},
+  program: {
+    title: "Program",
+    subheader: `We look forward to seeing you!`,
+    recommendedAttireLabel: "Recommended attire:",
+    recommendedAttireValue: "(outdoor) casual",
+    recommendedAttireNote: `Wear what you will feel comfortable in. The ceremony and dinner will take
+    place in an outdoor space, with an indoor space available during the
+    cocktail hour and soirée. Prepare for temperatures ranging from 25c (~80f)
+    in the early evening to 15c (~60f) at night.`,
+    timeline: [
+      { time: "6pm", event: "Exchange of vows" },
+      { time: "7pm", event: "Cocktail hour" },
+      { time: "8pm", event: "Dinner" },
+      { time: "10pm", event: "Party" },
+    ],
+  },
   location: {
     title: "Location",
     description:
@@ -83,8 +98,7 @@ const i18n: i18nWording = {
     encouraged to make their reservations 4 weeks before the ceremony at the
     latest.`,
   },
-
-  pageTitle: "On se marie",
+  pageTitle: "Chris and Sophie are getting married!",
 };
 
 export default i18n;
