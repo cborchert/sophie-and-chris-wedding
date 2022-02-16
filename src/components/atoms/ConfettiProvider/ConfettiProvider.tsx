@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import Confetti from "react-confetti";
-import { useListener } from "../../utils/events";
-import useMounted from "../../utils/useMounted";
+import { useListener } from "../../../utils/events";
+import useMounted from "../../../utils/useMounted";
 
 export const CONFETTI_CUSTOM_EVENT = "CONFETTI_CUSTOM_EVENT";
 

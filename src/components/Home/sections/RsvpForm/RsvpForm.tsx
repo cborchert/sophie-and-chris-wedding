@@ -3,16 +3,19 @@ import { Formik, Form, Field } from "formik";
 import { object, string, boolean, number, InferType } from "yup";
 import classNames from "classnames";
 
-import FormSpacer from "../form/FormSpacer/FormSpacer";
-import FormLine from "../form/FormLine/FormLine";
-import FormError from "../form/FormError/FormError";
-import CloseButton from "../CloseButton/CloseButton";
-import { CONFETTI_CUSTOM_EVENT } from "../ConfettiProvider/ConfettiProvider";
+import FormSpacer from "../../../atoms/forms/FormSpacer/FormSpacer";
+import FormLine from "../../../atoms/forms/FormLine/FormLine";
+import FormError from "../../../atoms/forms/FormError/FormError";
+import CloseButton from "../../../atoms/CloseButton/CloseButton";
+import { CONFETTI_CUSTOM_EVENT } from "../../../atoms/ConfettiProvider/ConfettiProvider";
 
-import { sendNotification, NotificationType } from "../../utils/notifications";
+import {
+  sendNotification,
+  NotificationType,
+} from "../../../../utils/notifications";
 
 import "./RsvpForm.scss";
-import { trigger, useListener } from "../../utils/events";
+import { trigger, useListener } from "../../../../utils/events";
 
 export enum FormState {
   CLOSED,
@@ -115,8 +118,8 @@ const RsvpForm = ({ wording }: PropTypes) => {
           {wording.description.split("\n").map((part, i) => (
             <p key={i}>{part}</p>
           ))}
-          <hr />
         </div>
+        <hr />
         <Formik
           initialValues={defaultValues}
           validationSchema={responseSchema}

@@ -3,7 +3,7 @@ import {
   Notification,
   NotificationType,
   removeNotification,
-} from "../../utils/notifications";
+} from "../../../utils/notifications";
 import CloseButton from "../CloseButton/CloseButton";
 
 import "./Toast.scss";

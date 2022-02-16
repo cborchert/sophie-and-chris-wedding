@@ -31,20 +31,45 @@ declare type i18nRsvpWording = {
 
 declare type i18nProgramWording = {};
 
-declare type i18nLocationWording = {};
+type LatLng = {
+  lat: number;
+  lng: number;
+};
 
-declare type i18nLodgingWording = {};
+declare type i18nLocationWording = {
+  title: string;
+  description: string;
+  address: string[];
+  directionsCtaLink: string;
+  directionsCtaLabel: string;
+  directionsTitle: string;
+  directionsContentLines: string[];
+  parkingTitle: string;
+  parkingDescription: string;
+  additionalParkingTitle: string;
+  additionalParkingLocations: string[];
+  additionalParkingNote: string;
+  map: {
+    homeLatLng: LatLng;
+    parkingLatLngs: LatLng[];
+  };
+};
+
+declare type i18nAccommodationsWording = {
+  title: string;
+  description: string;
+};
 
 declare type i18nWording = {
   hero: i18nHeroWording;
   rsvp: i18nRsvpWording;
   program: i18nProgramWording;
   location: i18nLocationWording;
-  lodging: i18nLodgingWording;
+  accommodations: i18nAccommodationsWording;
   pageTitle: string;
 };
 
-declare module "*.png" {
-  const value: any;
-  export default value;
-}
+// declare module "*.png" {
+//   const value: any;
+//   export default value;
+// }

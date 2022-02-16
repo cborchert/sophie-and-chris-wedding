@@ -43,10 +43,13 @@ button,
   background-color: transparent;
   cursor: pointer;
   transition: color 300ms, background-color 300ms;
+  font-style: normal;
+  text-decoration: none;
 
   &:hover {
     background: var(--bg-2);
     color: var(--fg-2);
+    text-decoration: none;
   }
 
   &.button--text {

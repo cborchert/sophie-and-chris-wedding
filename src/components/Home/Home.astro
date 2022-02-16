@@ -1,11 +1,11 @@
 ---
-import ConfettiProvider from '../ConfettiProvider/ConfettiProvider.tsx';
-import Hero from "../Hero/Hero.tsx"; 
-import Location from "../Location/Location.tsx";
-import Lodging from "../Lodging/Lodging.tsx";
-import Program from "../Program/Program.tsx";
-import RsvpForm from "../RsvpForm/RsvpForm.tsx";
-import ToastDispatcher from "../Toast/ToastDispatcher.tsx";
+import ConfettiProvider from '../atoms/ConfettiProvider/ConfettiProvider.tsx';
+import Hero from "./sections/Hero/Hero.tsx"; 
+import Location from "./sections/Location/Location.tsx";
+import Accommodations from "./sections/Accommodations/Accommodations.tsx";
+import Program from "./sections/Program/Program.tsx";
+import RsvpForm from "./sections/RsvpForm/RsvpForm.tsx";
+import ToastDispatcher from "../atoms/Toast/ToastDispatcher.tsx";
 
 const { i18n } = Astro.props; 
 ---
@@ -15,7 +15,7 @@ const { i18n } = Astro.props;
     <ConfettiProvider client:load />
     <Hero wording={i18n.hero} client:load />
     <RsvpForm wording={i18n.rsvp} client:load />
-    <!-- <Program wording={i18n.program} />
-    <Location wording={i18n.location} />
-    <Lodging wording={i18n.lodging} /> -->
+    <Program wording={i18n.program} />
+    <Location wording={i18n.location} client:load />
+    <Accommodations wording={i18n.accommodations} />
 </main>

@@ -1,5 +1,5 @@
-import { useNotifications } from "../../utils/notifications";
-import useMounted from "../../utils/useMounted";
+import { useNotifications } from "../../../utils/notifications";
+import useMounted from "../../../utils/useMounted";
 
 import Toast from "./Toast";
 
