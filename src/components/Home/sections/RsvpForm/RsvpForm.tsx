@@ -143,24 +143,18 @@ const RsvpForm = ({ wording }: PropTypes) => {
                 }
                 if (values.isAttending === "yes") {
                   trigger(CONFETTI_CUSTOM_EVENT);
-                  sendNotification(
-                    "Thanks for responding! We look forward to seeing you!",
-                    {
-                      type: NotificationType.SUCCESS,
-                    }
-                  );
+                  sendNotification(wording.yesResponseNotification, {
+                    type: NotificationType.SUCCESS,
+                  });
                 } else {
-                  sendNotification(
-                    "Thanks for responding. We'll miss seeing you!",
-                    {
-                      type: NotificationType.INFO,
-                    }
-                  );
+                  sendNotification(wording.noResponseNotification, {
+                    type: NotificationType.INFO,
+                  });
                 }
                 resetForm();
               })
               .catch((e) => {
-                sendNotification("Something went wrong. Please try again.", {
+                sendNotification(wording.errorNotification, {
                   type: NotificationType.ERROR,
                 });
               });

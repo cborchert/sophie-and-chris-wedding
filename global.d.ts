@@ -27,6 +27,9 @@ declare type i18nRsvpWording = {
   submit: string;
   submitIsAttending: string;
   submitIsNotAttending: string;
+  yesResponseNotification: string;
+  noResponseNotification: string;
+  errorNotification: string;
 };
 
 declare type i18nProgramWording = {

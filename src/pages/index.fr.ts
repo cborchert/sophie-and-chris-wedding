@@ -29,6 +29,10 @@ const i18n: i18nWording = {
     submit: "Submit",
     submitIsAttending: "I will be attending",
     submitIsNotAttending: "With regrets",
+    yesResponseNotification:
+      "Thanks for responding! We look forward to seeing you!",
+    noResponseNotification: "Thanks for responding. We'll miss seeing you!",
+    errorNotification: "Something went wrong. Please try again.",
   },
   program: {
     title: "Program",
