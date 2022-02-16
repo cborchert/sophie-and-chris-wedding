@@ -2,7 +2,10 @@
 import Layout from '../layouts/Layout.astro'
 import Home from '../components/Home/Home.astro'
 
-import i18n from './index.fr.ts'; 
+import i18nEn from './index.wording.en.ts'; 
+import i18nFr from './index.wording.fr.ts';
+
+let i18n = import.meta.env.PUBLIC_LANGUAGE_CODE === 'en' ? i18nEn : i18nFr;
 ---
 
 <Layout title={i18n.pageTitle}>
