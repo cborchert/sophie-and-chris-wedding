@@ -24,7 +24,6 @@ const Location = ({ wording }) => (
     <h3>{wording.parkingTitle}</h3>
     <p>{wording.parkingDescription}</p>
     <h4>{wording.additionalParkingTitle}</h4>
-    <Text>{wording.directions}</Text>
     <p>{wording.additionalParkingNote}</p>
     <Map
       center={wording.map.homeLatLng}

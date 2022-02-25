@@ -35,8 +35,8 @@ declare type i18nRsvpWording = {
 declare type i18nProgramWording = {
   title: string;
   subheader: string;
-  recommendedAttireLabel: string;
-  recommendedAttireValue: string;
+  recommendedAttireLabel?: string;
+  recommendedAttireValue?: string;
   recommendedAttireNote: string;
   timeline: { time: string; event: string }[];
 };

@@ -1,15 +1,17 @@
 const Text = ({
   children,
   as: Tag = "p",
+  splitOnNewLine = false,
   ...props
 }: {
   children?: Node | Node[] | string;
   as?: string;
+  splitOnNewLine?: boolean;
 }) =>
   ((Array.isArray(children) && children) || [children])
     .reduce((prev: Node[], curr: Node | string) => {
       if (typeof curr === "string") {
-        return [...prev, ...curr.split("\n")];
+        return [...prev, ...(splitOnNewLine ? curr.split("\n") : [curr])];
       } else if (Array.isArray(curr)) {
         return [...prev, ...curr];
       } else {

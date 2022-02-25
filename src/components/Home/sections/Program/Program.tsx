@@ -15,15 +15,17 @@ const Program = ({
 }) => (
   <section className="Program">
     <h2>{title}</h2>
-    <p>{subheader}</p>
+    <Text>{subheader}</Text>
     <ul>
       <Text as="li">
         {timeline.map(({ time, event }) => `${time} ${event}`)}
       </Text>
     </ul>
-    <p>
-      <strong>{recommendedAttireLabel}</strong> {recommendedAttireValue}
-    </p>
+    {recommendedAttireLabel && recommendedAttireValue ? (
+      <p>
+        <strong>{recommendedAttireLabel}</strong> {recommendedAttireValue}
+      </p>
+    ) : null}
     <p>{recommendedAttireNote}</p>
   </section>
 );

@@ -37,12 +37,12 @@ const i18n: i18nWording = {
   program: {
     title: "Program",
     subheader: `We look forward to seeing you!`,
-    recommendedAttireLabel: "Recommended attire:",
-    recommendedAttireValue: "(outdoor) casual",
-    recommendedAttireNote: `Wear what you will feel comfortable in. The ceremony and dinner will take
+    recommendedAttireLabel: undefined,
+    recommendedAttireValue: undefined,
+    recommendedAttireNote: `The ceremony and dinner will take
     place in an outdoor space, with an indoor space available during the
-    cocktail hour and soirée. Prepare for temperatures ranging from 25c (~80f)
-    in the early evening to 15c (~60f) at night.`,
+    cocktail hour and soirée. Prepare for temperatures ranging from 25°c (80°f)
+    in the early evening to 15°c (60°f) at night.`,
     timeline: [
       { time: "6pm", event: "Exchange of vows" },
       { time: "7pm", event: "Cocktail hour" },
@@ -54,7 +54,7 @@ const i18n: i18nWording = {
     title: "Location",
     description:
       "The wedding and celebration will take place at our residence at:",
-    address: ["9 rue du pré aux moines", "98520 Jouy-le-Moutier", "France"],
+    address: ["9 Rue du Pré aux Moines", "98520 Jouy-le-Moutier", "France"],
     directionsCtaLink:
       "https://www.google.com/maps/dir//9+Rue+du+Pr%C3%A9+aux+Moines,+95280+Jouy-le-Moutier/@49.0238617,2.038378,17z/data=!4m9!4m8!1m0!1m5!1m1!1s0x47e6f4b52fa2a969:0x71daccd08afde288!2m2!1d2.0405667!2d49.0238617!3e0",
     directionsCtaLabel: "Get directions",
@@ -71,7 +71,7 @@ const i18n: i18nWording = {
       Saint-Lazare station (2.5mi / 4km from our residence).`,
     ],
     parkingTitle: "Parking",
-    parkingDescription: `The rue de pré aux moines is relatively narrow and parking will be
+    parkingDescription: `The Rue du Pré aux Moines is relatively narrow and parking will be
     limited. Please try to arrange a carpool with other invitees, or a
     rideshare (e.g. Uber) to get to the house.`,
     additionalParkingTitle: "Larger parking areas nearby include:",
@@ -80,8 +80,8 @@ const i18n: i18nWording = {
       `20 Grande Rue, 95280 Jouy-le-Moutier .5 miles (750m)`,
       `355 Rue des Prés, 95490 Vauréal .5 miles (850m)`,
     ],
-    additionalParkingNote: `Additional parking may be available on the rue de vauréal which runs
-    parallel to rue du pré aux moines`,
+    additionalParkingNote: `Additional parking may be available on the Rue de Vauréal which runs
+    parallel to Rue du Pré aux Moines.`,
     map: {
       homeLatLng: { lat: 49.02399679949075, lng: 2.0405397516862323 },
       parkingLatLngs: [
@@ -94,13 +94,7 @@ const i18n: i18nWording = {
   },
   accommodations: {
     title: "Accommodations",
-    description: `Hotels, bed &amp; breakfasts (sometimes called <i>chambres d'hôtes</i> or 
-    <i>gîtes</i>), vacation rentals, and other lodgings are available in the
-    area through the normal booking websites. Larger nearby towns such as
-    Cergy (10 minutes by car/uber) provide a wide selection of hotels and
-    AirBnBs suitable for most budgets. Guests coming from out of town are
-    encouraged to make their reservations 4 weeks before the ceremony at the
-    latest.`,
+    description: `Hotels, bed &amp; breakfasts (sometimes called <i>chambres d'hôtes</i> or <i>gîtes</i>), vacation rentals, and other lodgings are available in the area through the normal booking websites. Larger nearby towns such as Cergy (10 minutes by car) provide a wide selection of hotels and AirBnBs suitable for most budgets.`,
   },
   pageTitle: "Chris and Sophie are getting married!",
 };
