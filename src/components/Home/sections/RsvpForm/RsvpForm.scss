@@ -5,12 +5,13 @@
   width: 100vw;
   height: 100vh;
   transition: left 0.4s ease-in-out;
-  font-size: 1.125rem;
+  font-size: 1.8rem;
   overflow: auto;
   z-index: var(--z-rsvp);
 
   background: var(--bg-2);
   color: var(--fg-2);
+
   &.is-visible {
     left: 0;
   }
@@ -26,13 +27,13 @@
 
 .RsvpForm__title {
   text-align: center;
-  font-size: 2rem;
+  font-size: 3.2rem;
   margin-bottom: var(--sp-4);
 }
 
 .RsvpForm__description {
   text-align: center;
-  font-size: 1.25rem;
+  font-size: 2rem;
   line-height: 1.5;
   margin-bottom: var(--sp-4);
   font-style: italic;

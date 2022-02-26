@@ -4,7 +4,7 @@ import Map from "../Map/Map";
 import "./Location.scss";
 
 const Location = ({ wording }) => (
-  <section className="Location">
+  <section className="Location section">
     <h2>{wording.title}</h2>
     <p>{wording.description}</p>
     <address>

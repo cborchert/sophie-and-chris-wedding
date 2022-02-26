@@ -13,7 +13,7 @@ const Program = ({
 }: {
   wording: i18nProgramWording;
 }) => (
-  <section className="Program">
+  <section className="Program section">
     <h2>{title}</h2>
     <Text>{subheader}</Text>
     <ul>
@@ -26,7 +26,6 @@ const Program = ({
         <strong>{recommendedAttireLabel}</strong> {recommendedAttireValue}
       </p>
     ) : null}
-    <p>{recommendedAttireNote}</p>
   </section>
 );
 
