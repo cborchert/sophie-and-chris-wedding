@@ -3,18 +3,26 @@
   --fg-alt: #eee;
   --bg: #222228;
   --bg-alt: #444;
+  --accent: #704267;
+  --accent: #b35d9d;
+  --accent: #f206c8;
+
   --bg-2: var(--fg);
   --bg-2-alt: var(--fg-alt);
   --fg-2: var(--bg);
   --fg-2-alt: var(--bg-alt);
+
   --error: #e74c3c;
   --success: #2ecc71;
   --info: #2980b9;
+
   --font-heading: "Great Vibes", "Georgia", serif;
   --font-text: "Noto Serif", "Georgia", serif;
   --font-mono: "Courier", monospace;
+
   --border-radius: 3px;
   --border-color: #aaa;
+
   --box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.8);
 
   --sp: 4px;

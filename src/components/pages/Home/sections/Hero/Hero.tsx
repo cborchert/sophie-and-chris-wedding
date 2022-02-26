@@ -6,11 +6,11 @@ import {
   RSVP_FORM_SUBMISSION_DATE,
   RSVP_FORM_SUBMITTED_EVENT,
 } from "../RsvpForm/RsvpForm";
-import { trigger, useListener } from "../../../../utils/events";
-import useMounted from "../../../../utils/useMounted";
+import { trigger, useListener } from "../../../../../utils/events";
+import useMounted from "../../../../../utils/useMounted";
 
-import Hibiscus01 from "../../../../images/hibiscus-1c.png";
-import Hibiscus02 from "../../../../images/hibiscus-2c.png";
+import Hibiscus01 from "../../../../../images/hibiscus-1c.png";
+import Hibiscus02 from "../../../../../images/hibiscus-2c.png";
 
 import "./Hero.scss";
 

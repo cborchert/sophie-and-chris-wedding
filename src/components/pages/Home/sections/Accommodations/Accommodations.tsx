@@ -1,4 +1,4 @@
-import Text from "../../../atoms/Text/Text";
+import Text from "../../../../atoms/Text/Text";
 import "./Accommodations.scss";
 
 type PropTypes = {

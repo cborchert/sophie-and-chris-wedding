@@ -3,20 +3,20 @@ import { Formik, Form, Field } from "formik";
 import { object, string, boolean, number, InferType } from "yup";
 import classNames from "classnames";
 
-import FormSpacer from "../../../atoms/forms/FormSpacer/FormSpacer";
-import FormLine from "../../../atoms/forms/FormLine/FormLine";
-import FormError from "../../../atoms/forms/FormError/FormError";
-import CloseButton from "../../../atoms/CloseButton/CloseButton";
-import { CONFETTI_CUSTOM_EVENT } from "../../../atoms/ConfettiProvider/ConfettiProvider";
-import Text from "../../../atoms/Text/Text";
+import FormSpacer from "../../../../atoms/forms/FormSpacer/FormSpacer";
+import FormLine from "../../../../atoms/forms/FormLine/FormLine";
+import FormError from "../../../../atoms/forms/FormError/FormError";
+import CloseButton from "../../../../atoms/CloseButton/CloseButton";
+import { CONFETTI_CUSTOM_EVENT } from "../../../../atoms/ConfettiProvider/ConfettiProvider";
+import Text from "../../../../atoms/Text/Text";
 
 import {
   sendNotification,
   NotificationType,
-} from "../../../../utils/notifications";
+} from "../../../../../utils/notifications";
 
 import "./RsvpForm.scss";
-import { trigger, useListener } from "../../../../utils/events";
+import { trigger, useListener } from "../../../../../utils/events";
 
 export enum FormState {
   CLOSED,
