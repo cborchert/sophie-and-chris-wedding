@@ -26,6 +26,7 @@ const Program = ({
         <strong>{recommendedAttireLabel}</strong> {recommendedAttireValue}
       </p>
     ) : null}
+    <p>{recommendedAttireNote}</p>
   </section>
 );
 
