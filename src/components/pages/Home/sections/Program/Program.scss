@@ -1,2 +1,9 @@
 .Program {
+  padding-top: 0;
+  min-height: 0;
+}
+
+.Program__inner {
+  max-width: 900px;
+  margin: 0 auto;
 }
