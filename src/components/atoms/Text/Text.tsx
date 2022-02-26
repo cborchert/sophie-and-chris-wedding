@@ -7,6 +7,7 @@ const Text = ({
   children?: Node | Node[] | string;
   as?: string;
   splitOnNewLine?: boolean;
+  [x: string]: any;
 }) =>
   ((Array.isArray(children) && children) || [children])
     .reduce((prev: Node[], curr: Node | string) => {

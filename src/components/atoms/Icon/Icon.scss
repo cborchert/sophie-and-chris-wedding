@@ -1,0 +1,53 @@
+$iconSize: 55px;
+$iconSizeSmall: 45px;
+$iconSizeLarge: 70px;
+
+.Icon__container {
+  border-radius: 50%;
+  background-color: var(--accent);
+  display: inline-block;
+  position: relative;
+
+  width: $iconSize;
+  height: $iconSize;
+
+  &.small {
+    width: $iconSizeSmall;
+    height: $iconSizeSmall;
+  }
+
+  &.large {
+    width: $iconSizeLarge;
+    height: $iconSizeLarge;
+  }
+
+  &.Icon__container--outline {
+    border: 1px solid black;
+  }
+}
+
+.Icon {
+  width: $iconSize;
+  height: $iconSize;
+  color: var(--bg);
+  display: inline-block;
+  fill: currentColor;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+
+  &.light {
+    color: var(--fg);
+  }
+
+  &.small {
+    width: $iconSizeSmall;
+    height: $iconSizeSmall;
+  }
+
+  &.large {
+    width: $iconSizeLarge;
+    height: $iconSizeLarge;
+  }
+}

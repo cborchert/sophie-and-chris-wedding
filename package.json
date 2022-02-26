@@ -19,6 +19,7 @@
     "formik": "^2.2.9",
     "react-confetti": "^6.0.1",
     "react-dom-confetti": "^0.2.0",
+    "vite-plugin-svgr": "^1.0.1",
     "yup": "^0.32.11"
   }
 }

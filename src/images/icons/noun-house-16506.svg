@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<svg
+  width="700pt"
+  height="700pt"
+  version="1.1"
+  viewBox="0 0 700 550"
+  xmlns="http://www.w3.org/2000/svg"
+  xmlns:xlink="http://www.w3.org/1999/xlink"
+>
+ 
+ <g>
+  <path
+      d="m561.09 525h-140v-140h-140v140h-140v-210c-19.332 0-35-15.672-35-35l245-210 105 90v-55h70v115l70 60c0 19.328-15.68 35-34.992 35z"
+      fill-rule="evenodd"
+    />
+  
+ </g>
+</svg>

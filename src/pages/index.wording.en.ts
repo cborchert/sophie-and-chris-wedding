@@ -43,12 +43,24 @@ const i18n: i18nWording = {
     place in an outdoor space, with an indoor space available during the
     cocktail hour and soirée. Prepare for temperatures ranging from 25°c (80°f)
     in the early evening to 15°c (60°f) at night.`,
-    timeline: [
-      { time: "6pm", event: "Exchange of vows" },
-      { time: "7pm", event: "Cocktail hour" },
-      { time: "8pm", event: "Dinner" },
-      { time: "10pm", event: "Party" },
-    ],
+    timeline: {
+      vows: {
+        time: "6pm",
+        event: "Exchange of vows",
+      },
+      cocktail: {
+        time: "7pm",
+        event: "Cocktail hour",
+      },
+      dinner: {
+        time: "8pm",
+        event: "Dinner",
+      },
+      party: {
+        time: "10pm",
+        event: "Party",
+      },
+    },
   },
   location: {
     title: "Location",

@@ -1,9 +1,43 @@
 .Program {
   padding-top: 0;
   min-height: 0;
+
+  h2 {
+    margin-top: 0;
+  }
 }
 
 .Program__inner {
-  max-width: 900px;
+  max-width: 600px;
   margin: 0 auto;
+}
+
+.Program__tagline {
+  font-style: italic;
+  margin: var(--sp-4) auto var(--sp-5);
+}
+
+.Program__timeline {
+  width: 500px;
+  margin: var(--sp-5) auto;
+}
+
+.Program__timelineItem {
+  display: flex;
+  align-items: center;
+  margin: var(--sp-4) auto;
+}
+
+.Program__timelineTime {
+  width: 100px;
+  text-align: right;
+}
+
+.Program__timelineIcon {
+  margin: 0 var(--sp-3);
+}
+
+.Program__timelineEvent {
+  width: 200px;
+  text-align: left;
 }

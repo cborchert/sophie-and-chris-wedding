@@ -32,13 +32,23 @@ declare type i18nRsvpWording = {
   errorNotification: string;
 };
 
+type TimelineItem = {
+  time: string;
+  event: string;
+};
+
 declare type i18nProgramWording = {
   title: string;
   subheader: string;
   recommendedAttireLabel?: string;
   recommendedAttireValue?: string;
   recommendedAttireNote: string;
-  timeline: { time: string; event: string }[];
+  timeline: {
+    vows: TimelineItem;
+    party: TimelineItem;
+    cocktail: TimelineItem;
+    dinner: TimelineItem;
+  };
 };
 
 type LatLng = {
