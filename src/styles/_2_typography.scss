@@ -1,16 +1,51 @@
+html {
+  /* 1 rem = 10px */
+  font-size: 62.5%;
+}
+
 body {
   background: var(--bg);
   color: var(--fg);
   font-family: var(--font-text);
+  font-size: 1.6rem;
 }
 
 h1,
 h2,
 h3,
 h4,
-h5 {
+h5,
+h6 {
   font-family: var(--font-heading);
   font-weight: bold;
+  margin: var(--sp-4) 0 var(--sp-1);
+}
+
+h6,
+.h6,
+h5,
+.h5 {
+  font-size: 1.25em;
+}
+
+h4,
+.h4 {
+  font-size: 1.5em;
+}
+
+h3,
+.h3 {
+  font-size: 2em;
+}
+
+h2,
+.h2 {
+  font-size: 3em;
+}
+
+h1,
+.h1 {
+  font-size: 4em;
 }
 
 a,
@@ -20,10 +55,73 @@ a,
   border: none;
   font-style: italic;
   opacity: 0.6;
+  color: var(--fg);
+  background: transparent;
+
   &:hover {
     background: transparent;
     color: var(--fg);
     text-decoration: underline;
     opacity: 1;
   }
+}
+
+blockquote {
+  margin: var(--sp-2);
+  padding: var(--sp-2);
+  border-left: 4px solid var(--border-color);
+  font-style: italic;
+  font-size: 1.7rem;
+}
+
+hr {
+  margin: var(--sp-4) auto;
+  opacity: 0.5;
+  border: 0;
+  border-top: 1px solid var(--border-color);
+}
+
+ul,
+ol {
+  margin: var(--sp-2) 0 var(--sp-2) var(--sp-2);
+  ul,
+  ol {
+    margin: 0;
+    margin-left: var(--sp-2);
+  }
+}
+
+pre {
+  margin: var(--sp-3) 0;
+  padding: var(--sp-3);
+  background-color: var(--bg-alt);
+}
+
+code {
+  font-family: var(--font-mono);
+  background-color: var(--bg-alt);
+}
+
+table {
+  margin: var(--sp-4) 0;
+  border-collapse: collapse;
+  border: 1px solid var(--border-color);
+}
+
+thead {
+  border-bottom: 1px solid var(--border-color);
+}
+
+th,
+td {
+  text-align: left;
+  padding: var(--sp-2) var(--sp-3);
+  &[align="right"] {
+    text-align: right;
+  }
+}
+
+tr:nth-child(even),
+thead tr:nth-child(odd) {
+  background-color: var(--bg-alt);
 }
