@@ -18,14 +18,14 @@
   --box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.8);
 
   --sp: 4px;
-  --sp-1: var(--sp);
-  --sp-2: calc(var(--sp) * 2);
-  --sp-3: calc(var(--sp) * 4);
-  --sp-4: calc(var(--sp) * 8);
-  --sp-5: calc(var(--sp) * 16);
-  --sp-6: calc(var(--sp) * 32);
-  --sp-7: calc(var(--sp) * 64);
-  --sp-8: calc(var(--sp) * 128);
+  --sp-1: var(--sp); // 4
+  --sp-2: calc(var(--sp) * 2); // 8
+  --sp-3: calc(var(--sp) * 4); // 16
+  --sp-4: calc(var(--sp) * 8); // 32
+  --sp-5: calc(var(--sp) * 16); // 64
+  --sp-6: calc(var(--sp) * 32); // 128
+  --sp-7: calc(var(--sp) * 64); // 256
+  --sp-8: calc(var(--sp) * 128); // 512
 
   --z-rsvp: 10;
   --z-toasts: 20;

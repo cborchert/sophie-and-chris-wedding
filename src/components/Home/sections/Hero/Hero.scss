@@ -3,7 +3,7 @@ $flowerBaseWidth: 280px;
 .Hero {
   text-align: center;
   position: relative;
-  padding: 80px;
+  padding: var(--sp-5);
   display: flex;
   justify-content: center;
   align-items: center;
@@ -13,21 +13,24 @@ $flowerBaseWidth: 280px;
     margin-bottom: var(--sp-4);
   }
 
-  h1 {
-    font-size: 6rem;
+  h1,
+  h2,
+  h3 {
     line-height: 1.25;
+    letter-spacing: 1px;
+    margin: 0 0 var(--sp-1);
+  }
+
+  h1 {
+    font-size: 9.6rem;
   }
 
   h2 {
-    font-size: 2.3rem;
-    line-height: 1.25;
-    letter-spacing: 1px;
+    font-size: 3.7rem;
   }
 
   h3 {
-    font-size: 1.4rem;
-    line-height: 1.5;
-    letter-spacing: 1px;
+    font-size: 2.2rem;
   }
 
   hr {
@@ -39,7 +42,7 @@ $flowerBaseWidth: 280px;
     display: inline-block;
     line-height: 2;
     vertical-align: middle;
-    margin: 0 16px;
+    margin: 0 var(--sp-3);
   }
 }
 
