@@ -36,7 +36,7 @@ const i18n: i18nWording = {
   },
   program: {
     title: "Program",
-    subheader: `We look forward to seeing you!`,
+    subheader: undefined,
     recommendedAttireLabel: undefined,
     recommendedAttireValue: undefined,
     recommendedAttireNote: `The ceremony and dinner will take

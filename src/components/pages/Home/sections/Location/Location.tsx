@@ -7,18 +7,29 @@ const Location = ({ wording }) => (
   <div className="theme-2">
     <section className="Location section theme-2">
       <h2>{wording.title}</h2>
-      <p>{wording.description}</p>
-      <address>
-        <Text>{wording.address}</Text>
-      </address>
-      <Map
-        center={wording.map.homeLatLng}
-        pins={[{ position: wording.map.homeLatLng }]}
-      />
-      <div>
-        <a className="button" href={wording.directionsCtaLink} target="_blank">
-          {wording.directionsCtaLabel}
-        </a>
+
+      <div className="Location__primary">
+        <div className="Location__location">
+          <p>{wording.description}</p>
+          <address>
+            <Text>{wording.address}</Text>
+          </address>
+          <div>
+            <a
+              className="button"
+              href={wording.directionsCtaLink}
+              target="_blank"
+            >
+              {wording.directionsCtaLabel}
+            </a>
+          </div>
+        </div>
+      </div>
+      <div className="Location__map">
+        <Map
+          center={wording.map.homeLatLng}
+          pins={[{ position: wording.map.homeLatLng }]}
+        />
       </div>
       <h3>{wording.directionsTitle}</h3>
       <Text>{wording.directions}</Text>

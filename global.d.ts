@@ -39,7 +39,7 @@ type TimelineItem = {
 
 declare type i18nProgramWording = {
   title: string;
-  subheader: string;
+  subheader?: string;
   recommendedAttireLabel?: string;
   recommendedAttireValue?: string;
   recommendedAttireNote: string;

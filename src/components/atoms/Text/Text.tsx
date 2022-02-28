@@ -19,6 +19,7 @@ const Text = ({
         return [...prev, curr];
       }
     }, [])
+    .filter((a) => a)
     .map((child, i) => (
       <Tag
         key={child || i}
