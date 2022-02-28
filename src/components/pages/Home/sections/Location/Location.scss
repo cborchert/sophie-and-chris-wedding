@@ -1,7 +1,39 @@
-.Location {
+.Location__directions {
+  width: 1020px;
+  max-width: 100%;
+  text-align: center;
+  margin: var(--sp-5) auto;
 }
 
-.Location__primary {
-  display: flex;
-  justify-content: center;
+.Location__directionsText,
+.Location__map {
+  display: inline-block;
+  vertical-align: top;
+  width: 400px;
+  max-width: 100%;
+  vertical-align: middle;
+}
+
+.Location__directionsText {
+  padding: var(--sp-2) var(--sp-4) var(--sp-4);
+}
+
+.Location__address {
+  margin: calc(var(--sp-4) + var(--sp-2)) auto;
+  font-size: 2.5rem;
+  font-style: normal;
+  line-height: 1.4;
+}
+
+.Location__parking {
+  padding: var(--sp-2) var(--sp-4);
+  width: 800px;
+  max-width: 100%;
+}
+
+.Location__parkingDescription {
+  margin: var(--sp-4) auto var(--sp-5);
+}
+
+.Location__parkingMap {
 }

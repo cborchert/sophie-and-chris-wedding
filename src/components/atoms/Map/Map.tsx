@@ -11,8 +11,10 @@ function Map({
     width: "450px",
     height: "450px",
     maxWidth: "100%",
+    margin: "0 auto",
   },
   pins = [],
+  className,
 }) {
   const { isLoaded } = useJsApiLoader({
     googleMapsApiKey: import.meta.env?.PUBLIC_GOOGLE_MAPS_API_KEY?.toString(),
@@ -24,6 +26,7 @@ function Map({
       center={center}
       zoom={zoom}
       options={options}
+      className={className}
     >
       {pins.map((pin) => (
         <Marker key={`${pin.position.lat},${pin.position.lng}`} {...pin} />

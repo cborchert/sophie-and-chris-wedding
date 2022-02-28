@@ -12,9 +12,7 @@ import "./Program.scss";
 const Program = ({
   wording: {
     title,
-    subheader,
-    recommendedAttireLabel,
-    recommendedAttireValue,
+
     recommendedAttireNote,
     timeline,
   },
@@ -26,7 +24,6 @@ const Program = ({
     <section className="Program section theme-2">
       <div className="Program__inner">
         <h2>{title}</h2>
-        <Text className="Program__tagline">{subheader}</Text>
         <div className="Program__timeline">
           {[
             { ...timeline.vows, icon: weddingSvg },
@@ -34,7 +31,7 @@ const Program = ({
             { ...timeline.dinner, icon: dinnerSvg },
             { ...timeline.party, icon: partySvg },
           ].map(({ time, event, icon }) => (
-            <div className="Program__timelineItem">
+            <div className="Program__timelineItem" key={time + event}>
               <div className="Program__timelineTime">{time}</div>
               <div className="Program__timelineIcon">
                 <Icon src={icon} contained size="small" />
@@ -43,11 +40,6 @@ const Program = ({
             </div>
           ))}
         </div>
-        {recommendedAttireLabel && recommendedAttireValue ? (
-          <p>
-            <strong>{recommendedAttireLabel}</strong> {recommendedAttireValue}
-          </p>
-        ) : null}
         <p>{recommendedAttireNote}</p>
       </div>
     </section>

@@ -36,9 +36,6 @@ const i18n: i18nWording = {
   },
   program: {
     title: "Program",
-    subheader: undefined,
-    recommendedAttireLabel: undefined,
-    recommendedAttireValue: undefined,
     recommendedAttireNote: `The ceremony and dinner will take
     place in an outdoor space, with an indoor space available during the
     cocktail hour and soirée. Prepare for temperatures ranging from 25°c (80°f)
@@ -82,18 +79,11 @@ const i18n: i18nWording = {
       Neuville-Université station on Paris RER line A coming from Paris'
       Saint-Lazare station (2.5mi / 4km from our residence).`,
     ],
-    parkingTitle: "Parking",
+    parkingTitle: "A Note on Parking",
     parkingDescription: `The Rue du Pré aux Moines is relatively narrow and parking will be
     limited. Please try to arrange a carpool with other invitees, or a
-    rideshare (e.g. Uber) to get to the house.`,
-    additionalParkingTitle: "Larger parking areas nearby include:",
-    additionalParkingLocations: [
-      `2 Rue des Blanchards, 95280 Jouy-le-Moutier (180m)`,
-      `20 Grande Rue, 95280 Jouy-le-Moutier .5 miles (750m)`,
-      `355 Rue des Prés, 95490 Vauréal .5 miles (850m)`,
-    ],
-    additionalParkingNote: `Additional parking may be available on the Rue de Vauréal which runs
-    parallel to Rue du Pré aux Moines.`,
+    rideshare (e.g. Uber) to get to the house. Additional parking may be available on the Rue de Vauréal which runs
+    parallel to Rue du Pré aux Moines or at a parking lot nearby.`,
     map: {
       homeLatLng: { lat: 49.02399679949075, lng: 2.0405397516862323 },
       parkingLatLngs: [

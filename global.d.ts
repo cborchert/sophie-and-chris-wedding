@@ -39,9 +39,6 @@ type TimelineItem = {
 
 declare type i18nProgramWording = {
   title: string;
-  subheader?: string;
-  recommendedAttireLabel?: string;
-  recommendedAttireValue?: string;
   recommendedAttireNote: string;
   timeline: {
     vows: TimelineItem;
@@ -66,9 +63,6 @@ declare type i18nLocationWording = {
   directionsContentLines: string[];
   parkingTitle: string;
   parkingDescription: string;
-  additionalParkingTitle: string;
-  additionalParkingLocations: string[];
-  additionalParkingNote: string;
   map: {
     homeLatLng: LatLng;
     parkingLatLngs: LatLng[];
