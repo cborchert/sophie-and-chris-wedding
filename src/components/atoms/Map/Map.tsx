@@ -10,6 +10,7 @@ function Map({
   containerStyle = {
     width: "450px",
     height: "450px",
+    maxWidth: "100%",
   },
   pins = [],
 }) {

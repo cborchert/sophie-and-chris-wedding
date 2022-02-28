@@ -8,8 +8,9 @@
 }
 
 .Program__inner {
-  max-width: 600px;
+  width: 600px;
   margin: 0 auto;
+  max-width: 100%;
 }
 
 .Program__tagline {
@@ -19,6 +20,7 @@
 
 .Program__timeline {
   width: 500px;
+  max-width: 100%;
   margin: var(--sp-5) auto;
 }
 
