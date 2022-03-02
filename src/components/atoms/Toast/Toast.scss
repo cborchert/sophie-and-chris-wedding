@@ -6,7 +6,7 @@
   display: flex;
   flex-direction: row;
   width: 400px;
-  max-width: 100%;
+  max-width: calc(100vw - 2 * var(--sp-3));
   margin: var(--sp-3);
   box-shadow: var(--box-shadow);
   font-weight: bold;
@@ -60,7 +60,11 @@
   }
 }
 
-.ToastMessage {
+.Toast__message {
   padding: var(--sp-3) var(--sp-4);
   flex-grow: 1;
+}
+
+.Toast__close {
+  padding: 0 var(--sp-2);
 }

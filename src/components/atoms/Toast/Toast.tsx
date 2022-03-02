@@ -8,7 +8,7 @@ import CloseButton from "../CloseButton/CloseButton";
 
 import "./Toast.scss";
 
-const Toast = ({ id, message, options }: Notification) => {
+const Toast = ({ id, message, options }: Notification & { key?: any }) => {
   return (
     <div
       className={classNames("Toast", {
@@ -18,8 +18,10 @@ const Toast = ({ id, message, options }: Notification) => {
       })}
       style={{ animationDuration: `${options?.duration || 8000}ms` }}
     >
-      <p className="ToastMessage">{message}</p>
-      <CloseButton onClick={() => removeNotification(id)} light />
+      <p className="Toast__message">{message}</p>
+      <div className="Toast__close">
+        <CloseButton onClick={() => removeNotification(id)} light />
+      </div>
     </div>
   );
 };

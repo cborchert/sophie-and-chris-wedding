@@ -70,7 +70,7 @@ export const useNotifications = (config?: {
   onAddNotification?: (Notification) => void;
   onRemoveNotification?: (string) => void;
   notificationType?: string;
-}) => {
+}): { notifications: Notification[]; resetNotifications: () => void } => {
   const {
     onAddNotification = noOp,
     onRemoveNotification = noOp,
