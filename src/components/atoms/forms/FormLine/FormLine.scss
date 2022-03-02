@@ -1,6 +1,6 @@
 .FormLine {
   margin-top: var(--sp-4);
-  margin-bottom: var(--sp-4);
+  margin-bottom: calc(var(--sp-4) + var(--sp-2));
   & > & {
     margin-top: 0;
   }

@@ -9,7 +9,6 @@ import CloseButton from "../CloseButton/CloseButton";
 import "./Toast.scss";
 
 const Toast = ({ id, message, options }: Notification) => {
-  console.log(options);
   return (
     <div
       className={classNames("Toast", {
