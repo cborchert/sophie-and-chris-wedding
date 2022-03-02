@@ -30,6 +30,7 @@ function Map({
     >
       {pins.map((pin) => (
         <Marker
+          key={`${pin.position.lat},${pin.position.lng}`}
           {...pin}
           icon={
             pin.icon
@@ -37,13 +38,12 @@ function Map({
                   url: pin.icon,
                   anchor:
                     window?.google?.maps &&
-                    new window.google.maps.Point(15, 15),
+                    new window.google.maps.Point(20, 20),
                   scaledSize:
-                    window?.google?.maps && new window.google.maps.Size(30, 30),
+                    window?.google?.maps && new window.google.maps.Size(40, 40),
                 }
               : undefined
           }
-          key={`${pin.position.lat},${pin.position.lng}`}
         />
       ))}
     </GoogleMap>

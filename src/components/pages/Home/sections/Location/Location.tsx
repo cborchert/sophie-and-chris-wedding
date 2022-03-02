@@ -1,7 +1,8 @@
 import Text from "../../../../atoms/Text/Text";
 import Map from "../../../../atoms/Map/Map";
 
-import homeIcon from "../../../../../images/icons/noun-house-16506.svg";
+import homeIcon from "../../../../../images/icons/noun-wedding-location-4521576.svg";
+import parkingIcon from "../../../../../images/icons/noun-parking-4629666.svg";
 
 import "./Location.scss";
 
@@ -40,10 +41,14 @@ const Location = ({ wording }) => (
         <div>
           <Map
             center={wording?.map?.homeLatLng}
-            zoom={14}
-            pins={wording?.map?.parkingLatLngs?.map((position) => ({
-              position,
-            }))}
+            zoom={14.4}
+            pins={[
+              ...(wording?.map?.parkingLatLngs?.map((position) => ({
+                position,
+                icon: parkingIcon,
+              })) || []),
+              { position: wording?.map?.homeLatLng, icon: homeIcon },
+            ]}
             className="Location__parkingMap"
           />
         </div>
