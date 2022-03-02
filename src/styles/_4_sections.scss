@@ -4,6 +4,10 @@
   min-height: 50vh;
   justify-content: center;
   align-items: center;
-  padding: var(--sp-5);
+  padding: var(--sp-5) var(--sp-4);
   text-align: center;
+
+  @media (max-width: var(--break-md)) {
+    padding: var(--sp-5);
+  }
 }

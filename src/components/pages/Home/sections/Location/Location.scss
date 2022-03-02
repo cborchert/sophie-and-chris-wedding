@@ -2,7 +2,11 @@
   width: 1020px;
   max-width: 100%;
   text-align: center;
-  margin: var(--sp-5) auto;
+  margin: var(--sp-3) auto var(--sp-5);
+
+  @media (max-width: var(--break-md)) {
+    margin: var(--sp-5) auto;
+  }
 }
 
 .Location__directionsText,
@@ -20,9 +24,13 @@
 
 .Location__address {
   margin: calc(var(--sp-4) + var(--sp-2)) auto;
-  font-size: 2.5rem;
+  font-size: 2.2rem;
   font-style: normal;
   line-height: 1.4;
+
+  @media (max-width: var(--break-md)) {
+    font-size: 2.5rem;
+  }
 }
 
 .Location__parking {

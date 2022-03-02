@@ -39,6 +39,12 @@
   --sp-7: calc(var(--sp) * 64); // 256
   --sp-8: calc(var(--sp) * 128); // 512
 
-  --z-rsvp: 10;
-  --z-toasts: 20;
+  --z-bg: 0;
+  --z-fg: 10;
+  --z-rsvp: 20;
+  --z-toasts: 30;
+
+  --break-md: 768px;
+  --break-lg: 992px;
+  --break-xl: 1200px;
 }
