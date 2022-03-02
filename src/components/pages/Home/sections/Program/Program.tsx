@@ -1,5 +1,4 @@
 import Icon from "../../../../atoms/Icon/Icon";
-import Text from "../../../../atoms/Text/Text";
 import WaveDivider from "../../../../atoms/WaveDivider/WaveDivider";
 
 import weddingSvg from "../../../../../images/icons/noun-wedding-bands-2049096.svg";

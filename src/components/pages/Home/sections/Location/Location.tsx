@@ -1,6 +1,8 @@
 import Text from "../../../../atoms/Text/Text";
 import Map from "../../../../atoms/Map/Map";
 
+import homeIcon from "../../../../../images/icons/noun-house-16506.svg";
+
 import "./Location.scss";
 
 const Location = ({ wording }) => (
@@ -26,7 +28,7 @@ const Location = ({ wording }) => (
         <div className="Location__map">
           <Map
             center={wording?.map?.homeLatLng}
-            pins={[{ position: wording?.map?.homeLatLng }]}
+            pins={[{ position: wording?.map?.homeLatLng, icon: homeIcon }]}
           />
         </div>
       </div>

@@ -29,7 +29,22 @@ function Map({
       className={className}
     >
       {pins.map((pin) => (
-        <Marker key={`${pin.position.lat},${pin.position.lng}`} {...pin} />
+        <Marker
+          {...pin}
+          icon={
+            pin.icon
+              ? {
+                  url: pin.icon,
+                  anchor:
+                    window?.google?.maps &&
+                    new window.google.maps.Point(15, 15),
+                  scaledSize:
+                    window?.google?.maps && new window.google.maps.Size(30, 30),
+                }
+              : undefined
+          }
+          key={`${pin.position.lat},${pin.position.lng}`}
+        />
       ))}
     </GoogleMap>
   ) : (
