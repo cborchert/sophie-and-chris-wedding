@@ -32,10 +32,13 @@ $iconSizeLarge: 70px;
   color: var(--bg);
   display: inline-block;
   fill: currentColor;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
+
+  .isContained {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
 
   &.light {
     color: var(--fg);
