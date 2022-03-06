@@ -99,7 +99,7 @@ const i18n: i18nWording = {
   },
   gifts: {
     title: "Registry & Gifts",
-    description: `Instead of providing a traditional registry for our wedding, we are asking that you contribute to our honeymoon fund, if you are capable.`,
+    description: `Instead of providing a traditional registry for our wedding, we're asking that you contribute to our honeymoon fund.`,
     ctaLabel: "Go to the honeymoon fund",
     ctaLink: "https://www.leetchi.com/c/mariage-sophie-et-chris",
   },

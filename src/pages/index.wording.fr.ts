@@ -1,9 +1,9 @@
 const i18n: i18nWording = {
   hero: {
-    nameOne: "Sophie",
+    nameOne: "Chris",
     and: "&",
-    nameTwo: "Chris",
-    date: "13 Août, 2022",
+    nameTwo: "Sophie",
+    date: "August 13th, 2022",
     location: "Jouy-le-Moutier, France",
     rsvpCta: "RSVP",
     rsvpPreviouslySubmittedCta:
@@ -96,6 +96,12 @@ const i18n: i18nWording = {
   accommodations: {
     title: "Accommodations",
     description: `Hotels, bed &amp; breakfasts (sometimes called <i>chambres d'hôtes</i> or <i>gîtes</i>), vacation rentals, and other lodgings are available in the area through the normal booking websites. Larger nearby towns such as Cergy (10 minutes by car) provide a wide selection of hotels and AirBnBs suitable for most budgets.`,
+  },
+  gifts: {
+    title: "Registry & Gifts",
+    description: `Instead of providing a traditional registry for our wedding, we're asking that you contribute to our honeymoon fund.`,
+    ctaLabel: "Go to the honeymoon fund",
+    ctaLink: "https://www.leetchi.com/c/mariage-sophie-et-chris",
   },
   pageTitle: "Chris and Sophie are getting married!",
 };

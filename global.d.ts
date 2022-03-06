@@ -74,11 +74,19 @@ declare type i18nAccommodationsWording = {
   description: string;
 };
 
+declare type i18nGiftsWording = {
+  title?: string;
+  description?: string;
+  ctaLabel?: string;
+  ctaLink?: string;
+};
+
 declare type i18nWording = {
   hero: i18nHeroWording;
   rsvp: i18nRsvpWording;
   program: i18nProgramWording;
   location: i18nLocationWording;
   accommodations: i18nAccommodationsWording;
+  gifts: i18nGiftsWording;
   pageTitle: string;
 };
