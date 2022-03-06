@@ -18,7 +18,7 @@ const Accommodations = ({ wording }: PropTypes) => (
       <Divider>
         <Icon Img={AccommodationsIcon} />
       </Divider>
-      <Text>{wording.description}</Text>
+      <Text className="Accommodations__text">{wording.description}</Text>
     </section>
   </>
 );

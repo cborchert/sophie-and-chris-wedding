@@ -1,6 +1,6 @@
 .Gifts {
   background-color: var(--accent);
-  color: var(--fg-2);
+  color: var(--accent-alt);
   min-height: 60vh;
 }
 
@@ -11,4 +11,8 @@
 
 .Gifts__cta {
   margin: var(--sp-5) auto;
+}
+
+.Gifts__text {
+  font-size: 2rem;
 }

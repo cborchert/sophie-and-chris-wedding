@@ -62,6 +62,15 @@ button,
     }
   }
 
+  &.button--accent-alt {
+    border: 1px solid var(--accent-alt);
+    color: var(--accent-alt);
+    &:hover {
+      background: var(--accent-alt);
+      color: var(--fg);
+    }
+  }
+
   &.button--block {
     display: block;
     width: 100%;
