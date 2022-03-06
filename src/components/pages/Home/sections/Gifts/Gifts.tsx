@@ -22,7 +22,7 @@ const Accommodations = ({ wording }: PropTypes) => (
         <Text className="Gifts__text">{wording?.description}</Text>
         <div className="Gifts__cta">
           <a
-            className="button button--accent-alt button--large"
+            className="button button--alt button--large"
             href={wording?.ctaLink}
             target="_blank"
           >
