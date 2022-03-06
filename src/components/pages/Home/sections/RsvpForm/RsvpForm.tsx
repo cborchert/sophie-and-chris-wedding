@@ -108,6 +108,7 @@ const RsvpForm = ({ wording }: PropTypes) => {
         "is-visible": state === FormState.OPEN,
         "is-submitted": state === FormState.SUBMITTED,
       })}
+      id="rsvp"
     >
       <div className="RsvpForm__closeButton">
         <CloseButton

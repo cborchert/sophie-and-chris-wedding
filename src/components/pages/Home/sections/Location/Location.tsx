@@ -13,7 +13,7 @@ import "./Location.scss";
 
 const Location = ({ wording }) => (
   <div className="theme-2">
-    <section className="Location section theme-2">
+    <section className="Location section theme-2" id="location">
       <h2>{wording?.title}</h2>
       <Divider>
         <Icon Img={LocationIcon} />
@@ -26,7 +26,7 @@ const Location = ({ wording }) => (
           </address>
           <div>
             <a
-              className="button button--alt"
+              className="button button--alt button--large"
               href={wording?.directionsCtaLink}
               target="_blank"
             >

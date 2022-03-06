@@ -2,7 +2,7 @@
   min-height: 0;
   padding-top: var(--sp-4);
 
-  @media (max-width: var(--break-md)) {
+  @media (min-width: 1000px) {
     padding-top: 0;
   }
 

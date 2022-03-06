@@ -1,3 +1,6 @@
+import { RSVP_FORM_OPENED_EVENT } from "../components/pages/Home/sections/RsvpForm/RsvpForm";
+import { trigger } from "../utils/events";
+
 const i18n: i18nWording = {
   hero: {
     nameOne: "Chris",
@@ -103,6 +106,18 @@ const i18n: i18nWording = {
     ctaLabel: "Go to the honeymoon fund",
     ctaLink: "https://www.leetchi.com/c/mariage-sophie-et-chris",
   },
+  menuItems: [
+    {
+      label: "RSVP",
+      href: "#rsvp",
+      openRsvpForm: true,
+    },
+    { href: "#program", label: "Program" },
+    { href: "#location", label: "Location" },
+    { href: "#accommodations", label: "Accommodation" },
+    { href: "#registry", label: "Registry" },
+    { href: "http://www.sophieetchris.wedding", label: "FRANÇAIS" },
+  ],
   pageTitle: "Chris and Sophie are getting married!",
 };
 

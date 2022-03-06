@@ -1,6 +1,6 @@
 .RsvpForm {
   position: fixed;
-  left: -100vw;
+  left: -150vw;
   top: 0;
   width: 100vw;
   height: 100vh;
@@ -17,7 +17,7 @@
   }
 
   &.is-submitted {
-    left: 100vw;
+    left: 150vw;
   }
 
   hr {

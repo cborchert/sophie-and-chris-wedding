@@ -52,7 +52,7 @@ const Hero = ({
 
   return (
     <>
-      <section className="Hero">
+      <section className="Hero" id="top">
         <div className="Hero__imageContainer Hero__imageContainer--glow">
           <img
             src={Hibiscus01}

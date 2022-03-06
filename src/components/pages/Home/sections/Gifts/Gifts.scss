@@ -1,11 +1,10 @@
 .Gifts {
   background-color: var(--accent);
   color: var(--fg-2);
+  min-height: 60vh;
 }
 
 .Gifts__inner {
-  background-color: var(--accent);
-  color: var(--fg-2);
   width: 600px;
   max-width: 100%;
 }

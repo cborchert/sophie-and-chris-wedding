@@ -7,7 +7,7 @@
   padding: var(--sp-5) var(--sp-4);
   text-align: center;
 
-  @media (max-width: var(--break-md)) {
+  @media (min-width: 1000px) {
     padding: var(--sp-5);
   }
 }

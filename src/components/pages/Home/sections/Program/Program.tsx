@@ -23,7 +23,7 @@ const Program = ({
 }) => (
   <>
     <WaveDivider className="theme-2" />
-    <section className="Program section theme-2">
+    <section className="Program section theme-2" id="program">
       <div className="Program__inner">
         <h2>{title}</h2>
         <Divider>

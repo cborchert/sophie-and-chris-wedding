@@ -8,14 +8,18 @@ import Accommodations from "./sections/Accommodations/Accommodations.tsx";
 import Program from "./sections/Program/Program.tsx";
 import RsvpForm from "./sections/RsvpForm/RsvpForm.tsx";
 import Gifts from "./sections/Gifts/Gifts.tsx";
+import Menu from "../../atoms/Menu/Menu.tsx";
 
 const { i18n } = Astro.props; 
+
+
 
 ---
 
 <main className="Home">
     <ToastDispatcher client:load />
     <ConfettiProvider client:load />
+    <Menu items={i18n.menuItems} client:load />
     <Hero wording={i18n.hero} client:load />
     <RsvpForm wording={i18n.rsvp} client:load />
     <Program wording={i18n.program} client:load />

@@ -67,3 +67,10 @@ h6 {
 #__next {
   isolation: isolate;
 }
+
+/*
+    10. smooth scrolling to anchors
+    */
+html {
+  scroll-behavior: smooth;
+}

@@ -41,6 +41,7 @@ button,
   transition: color 300ms, background-color 300ms;
   font-style: normal;
   text-decoration: none;
+  opacity: 1;
 
   &:hover {
     background: var(--bg-2);

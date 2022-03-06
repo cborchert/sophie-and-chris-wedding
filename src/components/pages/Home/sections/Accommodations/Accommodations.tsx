@@ -13,7 +13,7 @@ type PropTypes = {
 const Accommodations = ({ wording }: PropTypes) => (
   <>
     <WaveDivider theme={2} />
-    <section className="Accommodations section">
+    <section className="Accommodations section" id="accommodations">
       <h2>{wording.title}</h2>
       <Divider>
         <Icon Img={AccommodationsIcon} />

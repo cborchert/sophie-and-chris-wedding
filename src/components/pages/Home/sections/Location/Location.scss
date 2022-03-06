@@ -1,10 +1,10 @@
 .Location__directions {
-  width: 1020px;
+  width: 1000px;
   max-width: 100%;
   text-align: center;
   margin: var(--sp-3) auto var(--sp-5);
 
-  @media (max-width: var(--break-md)) {
+  @media (min-width: 1000px) {
     margin: var(--sp-5) auto;
   }
 }
@@ -13,13 +13,13 @@
 .Location__map {
   display: inline-block;
   vertical-align: top;
-  width: 400px;
+  width: 500px;
   max-width: 100%;
   vertical-align: middle;
 }
 
 .Location__directionsText {
-  padding: var(--sp-2) var(--sp-4) var(--sp-4);
+  padding: var(--sp-2) var(--sp-4) var(--sp-5);
 }
 
 .Location__address {
@@ -28,7 +28,7 @@
   font-style: normal;
   line-height: 1.4;
 
-  @media (max-width: var(--break-md)) {
+  @media (min-width: 1000px) {
     font-size: 2.5rem;
   }
 }

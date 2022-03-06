@@ -81,6 +81,13 @@ declare type i18nGiftsWording = {
   ctaLink?: string;
 };
 
+declare type MenuItems = Array<{
+  label?: string;
+  href?: string;
+  target?: string;
+  openRsvpForm?: boolean;
+}>;
+
 declare type i18nWording = {
   hero: i18nHeroWording;
   rsvp: i18nRsvpWording;
@@ -89,4 +96,5 @@ declare type i18nWording = {
   accommodations: i18nAccommodationsWording;
   gifts: i18nGiftsWording;
   pageTitle: string;
+  menuItems: MenuItems;
 };
