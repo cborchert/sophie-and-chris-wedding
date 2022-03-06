@@ -7,8 +7,10 @@ import Location from "./sections/Location/Location.tsx";
 import Accommodations from "./sections/Accommodations/Accommodations.tsx";
 import Program from "./sections/Program/Program.tsx";
 import RsvpForm from "./sections/RsvpForm/RsvpForm.tsx";
+import Gifts from "./sections/Gifts/Gifts.tsx";
 
 const { i18n } = Astro.props; 
+
 ---
 
 <main className="Home">
@@ -19,4 +21,5 @@ const { i18n } = Astro.props;
     <Program wording={i18n.program} client:load />
     <Location wording={i18n.location} client:load />
     <Accommodations wording={i18n.accommodations} client:load />
+    <Gifts wording={i18n.gifts} client:load />
 </main>

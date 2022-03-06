@@ -1,0 +1,15 @@
+.Gifts {
+  background-color: var(--accent);
+  color: var(--fg-2);
+}
+
+.Gifts__inner {
+  background-color: var(--accent);
+  color: var(--fg-2);
+  width: 600px;
+  max-width: 100%;
+}
+
+.Gifts__cta {
+  margin: var(--sp-5) auto;
+}

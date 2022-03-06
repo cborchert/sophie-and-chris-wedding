@@ -97,6 +97,12 @@ const i18n: i18nWording = {
     title: "Accommodations",
     description: `Hotels, bed &amp; breakfasts (sometimes called <i>chambres d'hôtes</i> or <i>gîtes</i>), vacation rentals, and other lodgings are available in the area through the normal booking websites. Larger nearby towns such as Cergy (10 minutes by car) provide a wide selection of hotels and AirBnBs suitable for most budgets.`,
   },
+  gifts: {
+    title: "Registry & Gifts",
+    description: `Instead of providing a traditional registry for our wedding, we are asking that you contribute to our honeymoon fund, if you are capable.`,
+    ctaLabel: "Go to the honeymoon fund",
+    ctaLink: "https://www.leetchi.com/c/mariage-sophie-et-chris",
+  },
   pageTitle: "Chris and Sophie are getting married!",
 };
 
