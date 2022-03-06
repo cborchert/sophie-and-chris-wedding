@@ -40,9 +40,9 @@ const i18n: i18nWording = {
   program: {
     title: "Program",
     recommendedAttireNote: `The ceremony and dinner will take
-    place in an outdoor space, with an indoor space available during the
+    place in an outdoor space on the grass, with an indoor space available during the
     cocktail hour and soirée. Prepare for temperatures ranging from 25°c (80°f)
-    in the early evening to 15°c (60°f) at night.`,
+    in the early evening to 15°c (60°f) at night. Flats are recommended for women.`,
     timeline: {
       vows: {
         time: "6pm",

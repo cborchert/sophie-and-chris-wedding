@@ -79,6 +79,7 @@ declare type i18nGiftsWording = {
   description?: string;
   ctaLabel?: string;
   ctaLink?: string;
+  dividerThemeWhite?: boolean;
 };
 
 declare type MenuItems = Array<{
@@ -93,7 +94,7 @@ declare type i18nWording = {
   rsvp: i18nRsvpWording;
   program: i18nProgramWording;
   location: i18nLocationWording;
-  accommodations: i18nAccommodationsWording;
+  accommodations?: i18nAccommodationsWording;
   gifts: i18nGiftsWording;
   pageTitle: string;
   menuItems: MenuItems;

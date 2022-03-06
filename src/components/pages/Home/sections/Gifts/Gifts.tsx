@@ -12,7 +12,10 @@ type PropTypes = {
 };
 const Accommodations = ({ wording }: PropTypes) => (
   <>
-    <WaveDivider theme={1} className="theme-3" />
+    <WaveDivider
+      theme={1}
+      className={wording.dividerThemeWhite ? "theme-4" : "theme-3"}
+    />
     <section className="Gifts section" id="registry">
       <div className="Gifts__inner">
         <h2>{wording?.title}</h2>
@@ -22,7 +25,7 @@ const Accommodations = ({ wording }: PropTypes) => (
         <Text className="Gifts__text">{wording?.description}</Text>
         <div className="Gifts__cta">
           <a
-            className="button button--alt button--large"
+            className="button button--accent-alt button--large"
             href={wording?.ctaLink}
             target="_blank"
           >
