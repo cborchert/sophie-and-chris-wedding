@@ -1,16 +1,11 @@
 .Divider {
-  margin: var(--sp-2) auto;
+  margin: var(--sp-3) auto var(--sp-4);
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
 .Divider__img {
-  width: 420px;
-  max-width: 100%;
   padding: 0 var(--sp-2);
-}
-
-.Divider__img_half {
-  width: 210px;
+  fill: currentColor;
 }

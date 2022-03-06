@@ -5,12 +5,17 @@ const FormLine = ({
   id,
   children,
   hidden,
+  className,
 }: {
   id?: string;
   children?: Node;
   hidden?: boolean;
+  className?: string;
 }) => (
-  <div id={id} className={classNames("FormLine", { "is-hidden": hidden })}>
+  <div
+    id={id}
+    className={classNames("FormLine", className, { "is-hidden": hidden })}
+  >
     {children}
   </div>
 );

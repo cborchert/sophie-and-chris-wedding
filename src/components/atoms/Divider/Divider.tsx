@@ -14,9 +14,9 @@ const Divider = ({
 }) => {
   return (
     <div className={classNames("Divider", className)}>
-      <DividerLeft />
+      <DividerLeft className="Divider__img" />
       {children || <DividerMiddle />}
-      <DividerRight />
+      <DividerRight className="Divider__img" />
     </div>
   );
 };

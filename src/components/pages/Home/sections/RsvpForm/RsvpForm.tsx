@@ -7,16 +7,20 @@ import FormSpacer from "../../../../atoms/forms/FormSpacer/FormSpacer";
 import FormLine from "../../../../atoms/forms/FormLine/FormLine";
 import FormError from "../../../../atoms/forms/FormError/FormError";
 import CloseButton from "../../../../atoms/CloseButton/CloseButton";
-import { CONFETTI_CUSTOM_EVENT } from "../../../../atoms/ConfettiProvider/ConfettiProvider";
+import Divider from "../../../../atoms/Divider/Divider";
 import Text from "../../../../atoms/Text/Text";
+import Icon from "../../../../atoms/Icon/Icon";
 
+import { CONFETTI_CUSTOM_EVENT } from "../../../../atoms/ConfettiProvider/ConfettiProvider";
 import {
   sendNotification,
   NotificationType,
 } from "../../../../../utils/notifications";
+import { trigger, useListener } from "../../../../../utils/events";
+
+import { ReactComponent as RsvpIcon } from "../../../../../images/icons/noun-stationery-2064427.svg";
 
 import "./RsvpForm.scss";
-import { trigger, useListener } from "../../../../../utils/events";
 
 export enum FormState {
   CLOSED,
@@ -114,11 +118,12 @@ const RsvpForm = ({ wording }: PropTypes) => {
       </div>
       <div className="RsvpForm__inner">
         <h2 className="RsvpForm__title">{wording.title}</h2>
-        <hr />
+        <Divider>
+          <Icon Img={RsvpIcon} />
+        </Divider>
         <div className="RsvpForm__description">
           <Text>{wording.description}</Text>
         </div>
-        <hr />
         <Formik
           initialValues={defaultValues}
           validationSchema={responseSchema}
@@ -193,8 +198,8 @@ const RsvpForm = ({ wording }: PropTypes) => {
               </FormLine>
               <FormLine id="bringingGuest">
                 <label>
-                  {wording.bringingGuestLabel}
                   <Field type="checkbox" name="isBringingGuest" />
+                  {wording.bringingGuestLabel}
                 </label>
                 <FormLine id="guest" hidden={!formik.values.isBringingGuest}>
                   <label>
@@ -208,8 +213,8 @@ const RsvpForm = ({ wording }: PropTypes) => {
 
               <FormLine id="bringingChildren">
                 <label>
-                  {wording.bringingChildrenLabel}
                   <Field type="checkbox" name="isBringingChildren" />
+                  {wording.bringingChildrenLabel}
                 </label>
 
                 <FormLine

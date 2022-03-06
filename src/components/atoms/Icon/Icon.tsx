@@ -9,7 +9,7 @@ const Icon = ({
   contained,
   containerClassName,
   size = "medium",
-  light,
+  theme,
   outlined,
 }: {
   src?: string;
@@ -18,7 +18,7 @@ const Icon = ({
   contained?: boolean;
   containerClassName?: string;
   size?: "small" | "medium" | "large";
-  light?: boolean;
+  theme?: "light" | "dark";
   outlined?: boolean;
 }) => {
   const El = Img || "img";
@@ -36,7 +36,7 @@ const Icon = ({
         className={classNames("Icon", className, {
           isContained: contained,
           [size]: size,
-          light,
+          [theme]: theme,
         })}
       />
     </span>
