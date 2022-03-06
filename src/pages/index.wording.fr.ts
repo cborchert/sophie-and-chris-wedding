@@ -60,7 +60,7 @@ const i18n: i18nWording = {
     },
   },
   location: {
-    title: "Addresse",
+    title: "Adresse",
     description:
       "La cérémonie, dîner, et soirée auront lieu à notre domicile au",
     address: ["9 Rue du Pré aux Moines", "98520 Jouy-le-Moutier"],
