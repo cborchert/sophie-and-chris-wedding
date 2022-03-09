@@ -12,6 +12,7 @@ declare type i18nRsvpWording = {
   title: string;
   description: string;
   yourNameLabel: string;
+  yourEmailLabel: string;
   isAttendingLabel: string;
   isAttendingYesLabel: string;
   isAttendingNoLabel: string;

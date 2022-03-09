@@ -17,10 +17,12 @@ const i18n: i18nWording = {
     description:
       "C'est avec joie que nous vous convions à notre mariage le 13 août 2022 à Jouy-le-Moutier.\nMerci de bien vouloir confirmer votre présence en remplissant le formulaire ci-dessous avant le 30 mai 2022.",
     yourNameLabel: "Votre nom et prénom",
-    isAttendingLabel: "Serez vous présent ?",
+    yourEmailLabel:
+      "Votre email (facultatif, pour recevoir des informations essentielles)",
+    isAttendingLabel: "Serez vous présent(e) ?",
     isAttendingYesLabel: "Oui",
     isAttendingNoLabel: "Non",
-    bringingGuestLabel: "Amenerez-vous un invité ?",
+    bringingGuestLabel: "Amenerez-vous un(e) invité(e) ?",
     guestNameLabel: "Le nom et prénom de votre invité",
     bringingChildrenLabel: "Amenerez-vous des enfants ?",
     howManyChildrenLabel: "Combien d'enfants ?",

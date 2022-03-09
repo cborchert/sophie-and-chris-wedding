@@ -17,6 +17,7 @@ const i18n: i18nWording = {
     description:
       "You are cordially invited to our wedding on August 13th, 2022 in Jouy-le-Moutier, France.\nPlease fill out the form below to RSVP by May 30th, 2022",
     yourNameLabel: "Your first and last name",
+    yourEmailLabel: "Your email (optional, for essential updates)",
     isAttendingLabel: "Will you be attending?",
     isAttendingYesLabel: "Yes",
     isAttendingNoLabel: "No",

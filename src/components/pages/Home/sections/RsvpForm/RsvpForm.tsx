@@ -47,6 +47,7 @@ const encode = (data) => {
 const getFormikValues = (wording) => {
   const responseSchema = object({
     name: string().required(wording.requiredError),
+    email: string().email(),
     isAttending: string()
       .matches(/(yes|no)/, { excludeEmptyString: true })
       .required(wording.requiredError),
@@ -74,6 +75,7 @@ const getFormikValues = (wording) => {
 
   const defaultValues: Response = {
     name: "",
+    email: "",
     isAttending: "",
     isBringingGuest: false,
     guestName: "",
@@ -182,11 +184,14 @@ const RsvpForm = ({ wording }: PropTypes) => {
               name="rsvp"
               method="post"
               data-netlify="true"
-              data-netlify-honeypot="email"
+              data-netlify-honeypot="phone"
             >
               <input type="hidden" name="form-name" value="rsvp" />
               <FormLine hidden>
-                <input type="email" name="email" />
+                <label>
+                  Phone
+                  <Field type="string" name="phone" />
+                </label>
               </FormLine>
               <FormLine id="name">
                 <label>
@@ -245,6 +250,13 @@ const RsvpForm = ({ wording }: PropTypes) => {
                   <FormError name="numberOfChildren" formik={formik} />
                 </FormLine>
                 {!formik.values.isBringingChildren && <FormSpacer />}
+              </FormLine>
+
+              <FormLine id="email">
+                <label>
+                  {wording.yourEmailLabel}
+                  <Field type="email" name="email" />
+                </label>
               </FormLine>
 
               <FormLine id="otherNotes">
