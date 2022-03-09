@@ -231,11 +231,7 @@ const RsvpForm = ({ wording }: PropTypes) => {
 
               <FormLine id="bringingChildren">
                 <label>
-                  <Field
-                    type="checkbox"
-                    name="isBringingChildren"
-                    onChange={console.log}
-                  />
+                  <Field type="checkbox" name="isBringingChildren" />
                   {wording.bringingChildrenLabel}
                 </label>
 
