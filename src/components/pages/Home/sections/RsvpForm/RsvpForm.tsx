@@ -145,6 +145,7 @@ const RsvpForm = ({ wording }: PropTypes) => {
               RSVP_FORM_SUBMISSION_DATE,
               submissionDate
             );
+
             trigger(RSVP_FORM_SUBMITTED_EVENT);
             setState(FormState.SUBMITTED);
             setSubmitting(false);
