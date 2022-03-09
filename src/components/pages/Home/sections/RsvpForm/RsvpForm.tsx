@@ -129,6 +129,17 @@ const RsvpForm = ({ wording }: PropTypes) => {
           initialValues={defaultValues}
           validationSchema={responseSchema}
           onSubmit={(values, { setSubmitting, resetForm }) => {
+            // don't send nonsense
+            const validatedValues = {
+              ...values,
+            };
+            if (!validatedValues.isBringingChildren) {
+              validatedValues.numberOfChildren = 0;
+            }
+            if (!validatedValues.isBringingGuest) {
+              validatedValues.guestName = "";
+            }
+
             const submissionDate = Date.now().toString();
             window.localStorage.setItem(
               RSVP_FORM_SUBMISSION_DATE,
@@ -140,7 +151,7 @@ const RsvpForm = ({ wording }: PropTypes) => {
             fetch("/", {
               method: "POST",
               headers: { "Content-Type": "application/x-www-form-urlencoded" },
-              body: encode({ "form-name": "rsvp", ...values }),
+              body: encode({ "form-name": "rsvp", ...validatedValues }),
             })
               .then(({ ok, status }) => {
                 if (!ok || status !== 200) {
@@ -214,7 +225,11 @@ const RsvpForm = ({ wording }: PropTypes) => {
 
               <FormLine id="bringingChildren">
                 <label>
-                  <Field type="checkbox" name="isBringingChildren" />
+                  <Field
+                    type="checkbox"
+                    name="isBringingChildren"
+                    onChange={console.log}
+                  />
                   {wording.bringingChildrenLabel}
                 </label>
 
