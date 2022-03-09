@@ -3,6 +3,8 @@ import Confetti from "react-confetti";
 import { useListener } from "../../../utils/events";
 import useMounted from "../../../utils/useMounted";
 
+import "./ConfettiProvider.scss";
+
 export const CONFETTI_CUSTOM_EVENT = "CONFETTI_CUSTOM_EVENT";
 
 const ConfettiProvider = () => {
@@ -22,6 +24,7 @@ const ConfettiProvider = () => {
 
   return (
     <Confetti
+      className="ConfettiProvider"
       key={triggeredTime}
       recycle={false}
       numberOfPieces={800}
